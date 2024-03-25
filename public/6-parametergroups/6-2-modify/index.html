@@ -3,30 +3,30 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.99.1" />
+    <meta name="generator" content="Hugo 0.122.0">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Modify Custom Parameter Group :: AWS RDS PostgreSQL</title>
+    <title>Modify Custom Parameter Group :: AWS RDS POSTGRESQL FOUNDATION</title>
 
     
-    <link href="/css/nucleus.css?1701272519" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1701272519" rel="stylesheet">
-    <link href="/css/hybrid.css?1701272519" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1701272519" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1701272519" rel="stylesheet">
-    <link href="/css/auto-complete.css?1701272519" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1701272519" rel="stylesheet">
-    <link href="/css/theme.css?1701272519" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1701272519" rel="stylesheet">
+    <link href="/css/nucleus.css?1711395039" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1711395039" rel="stylesheet">
+    <link href="/css/hybrid.css?1711395039" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1711395039" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1711395039" rel="stylesheet">
+    <link href="/css/auto-complete.css?1711395039" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1711395039" rel="stylesheet">
+    <link href="/css/theme.css?1711395039" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1711395039" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1701272519" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1711395039" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1701272519"></script>
+    <script src="/js/jquery-3.3.1.min.js?1711395039"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1701272519"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1701272519"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1711395039"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1711395039"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1701272519"></script>
+<script type="text/javascript" src="/js/search.js?1711395039"></script>
 
     
   </div>
@@ -852,7 +852,7 @@
   
     
     <li data-nav-id="/6-parametergroups/6-2-modify/" title="Modify Custom Parameter Group" class="dd-item 
-        parent
+        
         active
         
         ">
@@ -1158,7 +1158,7 @@
       <left>
     
      <b> Workshop</b> <br>
-    <img src="https://hitwebcounter.com/counter/counter.php?page=10066013&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7920860&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
      <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
     <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
      
@@ -1167,15 +1167,14 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>29-11-2023</font></i>
+        <i><font color=orange>20-10-2023</font></i>
     </left>
     <left>
         <br>
         <br>
             <b> Team </b> <br>
            
-            <i>
-                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>
+            <i> <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>
                 <a href="https://www.linkedin.com/in/hiepnguyendt"  style="color:orange">Thanh Hiệp </a>
                
         </i>
@@ -1269,46 +1268,58 @@
 	<p>To modify a parameter group in Amazon RDS, you can use the AWS Console, the AWS CLI, or the AWS SDK.</p>
 <p>Using the AWS Console:</p>
 <ol>
-<li>Go to the Amazon RDS <a href="https://console.aws.amazon.com/rds/home#databases">console</a>.</li>
-<li>In the navigation pane, choose <strong>Parameter groups</strong>.</li>
-<li>Choose the parameter group that you want to modify.</li>
-<li>Under <strong>Actions</strong>, choose <strong>Edit</strong>.</li>
-</ol>
-<p><img src="/images/6/2/1.png" alt="modify"></p>
-<ol start="5">
-<li>In the filter parameters search box, look for <code>log_connections</code> parameter.</li>
-</ol>
-<p><img src="/images/6/2/2.png" alt="modify"></p>
-<ol start="6">
-<li>Click on the drop down in the <strong>Values</strong> column (if needed you can check the box to the left to activate the Values drop down).</li>
-</ol>
-<p><img src="/images/6/2/3.png" alt="modify"></p>
-<ol start="7">
-<li>Change the value to 1 and click <strong>Save changes</strong>.</li>
-<li>Now clear the search box and look for another parameter by entering <code>log_min_duration_statement</code>.</li>
-</ol>
-<p><img src="/images/6/2/4.png" alt="modify"></p>
-<ol start="9">
-<li>In the <strong>Values</strong> box, enter <code>4000</code>.</li>
-</ol>
-<p><img src="/images/6/2/5.png" alt="modify"></p>
-<ol start="10">
-<li>Click <strong>Save changes</strong>.</li>
+<li>
+<p>Go to the Amazon RDS <a href="https://console.aws.amazon.com/rds/home#databases">console</a>.</p>
+</li>
+<li>
+<p>In the navigation pane, choose <strong>Parameter groups</strong>.</p>
+</li>
+<li>
+<p>Choose the parameter group that you want to modify.</p>
+</li>
+<li>
+<p>Under <strong>Actions</strong>, choose <strong>Edit</strong>.
+<img src="/images/6/2/1.png" alt="modify"></p>
+</li>
+<li>
+<p>In the filter parameters search box, look for <code>log_connections</code> parameter.
+<img src="/images/6/2/2.png" alt="modify"></p>
+</li>
+<li>
+<p>Click on the drop down in the <strong>Values</strong> column (if needed you can check the box to the left to activate the Values drop down).
+<img src="/images/6/2/3.png" alt="modify"></p>
+</li>
+<li>
+<p>Change the value to 1 and click <strong>Save changes</strong>.</p>
+</li>
+<li>
+<p>Now clear the search box and look for another parameter by entering <code>log_min_duration_statement</code>.
+<img src="/images/6/2/4.png" alt="modify"></p>
+</li>
+<li>
+<p>In the <strong>Values</strong> box, enter <code>4000</code>.
+<img src="/images/6/2/5.png" alt="modify"></p>
+</li>
+<li>
+<p>Click <strong>Save changes</strong>.</p>
+</li>
 </ol>
 
 <div class="notices note" ><p>Note if you get an error message like “ Error saving: This parameter group cannot be modified because it is currently being applied to DB Instance” please wait a few minutes and retry your save action.</p>
 </div>
 
 <ol start="11">
-<li>Click the checkbox against the new parameter group and go to Parameter group <strong>actions</strong> drop down (on top right), choose <strong>Compare</strong>.</li>
+<li>
+<p>Click the checkbox against the new parameter group and go to Parameter group <strong>actions</strong> drop down (on top right), choose <strong>Compare</strong>.
+<img src="/images/6/2/6.png" alt="modify"></p>
+</li>
+<li>
+<p>Verify the changes from the default parameter group and then click <strong>Close</strong>.
+<img src="/images/6/2/7.png" alt="modify"></p>
+</li>
 </ol>
-<p><img src="/images/6/2/6.png" alt="modify"></p>
-<ol start="12">
-<li>Verify the changes from the default parameter group and then click <strong>Close</strong>.</li>
-</ol>
-<p><img src="/images/6/2/7.png" alt="modify"></p>
 <h4 id="optional-aws-cli">(OPTIONAL) AWS CLI</h4>
-<p>Alternatively you can modify a custom parameter group using the AWS CLI as shown below:</p>
+<p>Alternatively you can modify a custom parameter group using the AWS CLI as shown below:
 
 <div class="expand">
     <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
@@ -1331,7 +1342,7 @@ aws rds modify-db-parameter-group \
 	--region $AWSREGION
 </code></pre>
     </div>
-</div>
+</div></p>
 
 
 
@@ -1956,19 +1967,19 @@ aws rds modify-db-parameter-group \
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1701272519"></script>
-    <script src="/js/perfect-scrollbar.min.js?1701272519"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1701272519"></script>
-    <script src="/js/jquery.sticky.js?1701272519"></script>
-    <script src="/js/featherlight.min.js?1701272519"></script>
-    <script src="/js/highlight.pack.js?1701272519"></script>
+    <script src="/js/clipboard.min.js?1711395039"></script>
+    <script src="/js/perfect-scrollbar.min.js?1711395039"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1711395039"></script>
+    <script src="/js/jquery.sticky.js?1711395039"></script>
+    <script src="/js/featherlight.min.js?1711395039"></script>
+    <script src="/js/highlight.pack.js?1711395039"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1701272519"></script>
-    <script src="/js/learn.js?1701272519"></script>
-    <script src="/js/hugo-learn.js?1701272519"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1711395039"></script>
+    <script src="/js/learn.js?1711395039"></script>
+    <script src="/js/hugo-learn.js?1711395039"></script>
 
-    <link href="/mermaid/mermaid.css?1701272519" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1701272519"></script>
+    <link href="/mermaid/mermaid.css?1711395039" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1711395039"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

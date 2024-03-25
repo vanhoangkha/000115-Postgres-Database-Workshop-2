@@ -3,30 +3,30 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.99.1" />
+    <meta name="generator" content="Hugo 0.122.0">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>AWS Backup :: AWS RDS PostgreSQL</title>
+    <title>AWS Backup :: AWS RDS POSTGRESQL FOUNDATION</title>
 
     
-    <link href="/css/nucleus.css?1701272519" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1701272519" rel="stylesheet">
-    <link href="/css/hybrid.css?1701272519" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1701272519" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1701272519" rel="stylesheet">
-    <link href="/css/auto-complete.css?1701272519" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1701272519" rel="stylesheet">
-    <link href="/css/theme.css?1701272519" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1701272519" rel="stylesheet">
+    <link href="/css/nucleus.css?1711395039" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1711395039" rel="stylesheet">
+    <link href="/css/hybrid.css?1711395039" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1711395039" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1711395039" rel="stylesheet">
+    <link href="/css/auto-complete.css?1711395039" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1711395039" rel="stylesheet">
+    <link href="/css/theme.css?1711395039" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1711395039" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1701272519" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1711395039" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1701272519"></script>
+    <script src="/js/jquery-3.3.1.min.js?1711395039"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1701272519"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1701272519"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1711395039"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1711395039"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1701272519"></script>
+<script type="text/javascript" src="/js/search.js?1711395039"></script>
 
     
   </div>
@@ -580,7 +580,7 @@
   
     
     <li data-nav-id="/4-backuprecovery/4-6-awsbackup/" title="AWS Backup" class="dd-item 
-        parent
+        
         active
         
         ">
@@ -1158,7 +1158,7 @@
       <left>
     
      <b> Workshop</b> <br>
-    <img src="https://hitwebcounter.com/counter/counter.php?page=10066013&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7920860&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
      <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
     <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
      
@@ -1167,15 +1167,14 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>29-11-2023</font></i>
+        <i><font color=orange>20-10-2023</font></i>
     </left>
     <left>
         <br>
         <br>
             <b> Team </b> <br>
            
-            <i>
-                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>
+            <i> <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>
                 <a href="https://www.linkedin.com/in/hiepnguyendt"  style="color:orange">Thanh Hiệp </a>
                
         </i>
@@ -1274,46 +1273,83 @@
 
 <h4 id="creating-a-service-role-for-aws-backup">Creating a Service Role for AWS Backup</h4>
 <p>In order for <strong>AWS Backup</strong> to preform operations on your behalf we need to assign it a service role.</p>
-<p>From the <a href="https://console.aws.amazon.com/iamv2/home#/roles">IAM Console</a>  select <strong>Create role</strong></p>
-<p><img src="/images/4/4-6/1.png" alt="aws backups"></p>
-<p>Select <strong>AWS Service</strong> for the trusted entity type and use the use cases dropdown to find and select <strong>AWS Backup</strong>, select the <strong>AWS Backup</strong> radio button, then click <strong>Next</strong>.</p>
-<p><img src="/images/4/4-6/2.png" alt="aws backups"></p>
-<p>In the add permissions step, use the filter by entering <strong>AWSBackupServiceRole</strong> and select the checkboxes for: <strong>AWSBackupServiceRolePolicyForBackup</strong> and <strong>AWSBackupServiceRolePolicyForRestore</strong>, then click <strong>Next</strong>.</p>
-<p><img src="/images/4/4-6/3.png" alt="aws backups"></p>
-<p>Give the role a name, <code>rdspg-AWSBackupServiceRole</code>, review the details then click <strong>Create Role</strong>.</p>
-<p><img src="/images/4/4-6/4.png" alt="aws backups">
+<ol>
+<li>
+<p>From the <a href="https://console.aws.amazon.com/iamv2/home#/roles">IAM Console</a>  select <strong>Create role</strong>
+<img src="/images/4/4-6/1.png" alt="aws backups"></p>
+</li>
+<li>
+<p>Select <strong>AWS Service</strong> for the trusted entity type and use the use cases dropdown to find and select <strong>AWS Backup</strong>, select the <strong>AWS Backup</strong> radio button, then click <strong>Next</strong>.
+<img src="/images/4/4-6/2.png" alt="aws backups"></p>
+</li>
+<li>
+<p>In the add permissions step, use the filter by entering <strong>AWSBackupServiceRole</strong> and select the checkboxes for: <strong>AWSBackupServiceRolePolicyForBackup</strong> and <strong>AWSBackupServiceRolePolicyForRestore</strong>, then click <strong>Next</strong>.
+<img src="/images/4/4-6/3.png" alt="aws backups"></p>
+</li>
+<li>
+<p>Give the role a name, <code>rdspg-AWSBackupServiceRole</code>, review the details then click <strong>Create Role</strong>.
+<img src="/images/4/4-6/4.png" alt="aws backups">
 <img src="/images/4/4-6/5.png" alt="aws backups">
 <img src="/images/4/4-6/6.png" alt="aws backups">
 <img src="/images/4/4-6/7.png" alt="aws backups"></p>
+</li>
+</ol>
 <h4 id="on-demand-backup-from-aws-backup">On-Demand Backup from AWS Backup</h4>
-<p>Begin in the <a href="https://console.aws.amazon.com/backup/home">AWS Backup Console</a> . First create a <strong>Backup Vault</strong>, which is a logical container used to organize your backups. Click on <strong>Backup Vaults</strong> from the left-hand menu, then select <strong>Create Backup vault</strong>.</p>
-<p><img src="/images/4/4-6/8.png" alt="aws backups"></p>
-<p>Give the vault a name, <code>rdspg-backup-vault</code> and click <strong>Create Backup vault</strong>.</p>
-<p><img src="/images/4/4-6/9.png" alt="aws backups"></p>
-<p>With your vault created you can now create an on-demand backup. Choose <strong>Protected resources</strong> from the left-hand menu, then click <strong>Create on-demand backup</strong>.</p>
-<p><img src="/images/4/4-6/10.png" alt="aws backups"></p>
-<p>Complete the dialog by selecting RDS and your resource type then choosing the <strong>rdspg-fcj-labs</strong> database. Select the <strong>backup vault</strong> you just created. Select choose an <strong>IAM role</strong>, and select your <strong>rdspg-AWSBackupServiceRole</strong> from the dropdown and finally hit <strong>Create on-demand backup</strong>.</p>
-<p><img src="/images/4/4-6/11.png" alt="aws backups"></p>
-<p>You will see the backup in your backup jobs list. This is the same as the manual snapshot, but your backup is organized into a backup vault.</p>
-<p><img src="/images/4/4-6/12.png" alt="aws backups"></p>
+<p>Begin in the <a href="https://console.aws.amazon.com/backup/home">AWS Backup Console</a> .</p>
+<ol>
+<li>
+<p>First create a <strong>Backup Vault</strong>, which is a logical container used to organize your backups. Click on <strong>Backup Vaults</strong> from the left-hand menu, then select <strong>Create Backup vault</strong>.
+<img src="/images/4/4-6/8.png" alt="aws backups"></p>
+</li>
+<li>
+<p>Give the vault a name, <code>rdspg-backup-vault</code> and click <strong>Create Backup vault</strong>.
+<img src="/images/4/4-6/9.png" alt="aws backups"></p>
+</li>
+<li>
+<p>With your vault created you can now create an on-demand backup. Choose <strong>Protected resources</strong> from the left-hand menu, then click <strong>Create on-demand backup</strong>.
+<img src="/images/4/4-6/10.png" alt="aws backups"></p>
+</li>
+<li>
+<p>Complete the dialog by selecting RDS and your resource type then choosing the <strong>rdspg-fcj-labs</strong> database. Select the <strong>backup vault</strong> you just created. Select choose an <strong>IAM role</strong>, and select your <strong>rdspg-AWSBackupServiceRole</strong> from the dropdown and finally hit <strong>Create on-demand backup</strong>.
+<img src="/images/4/4-6/11.png" alt="aws backups"></p>
+</li>
+<li>
+<p>You will see the backup in your backup jobs list. This is the same as the manual snapshot, but your backup is organized into a backup vault.
+<img src="/images/4/4-6/12.png" alt="aws backups"></p>
+</li>
+</ol>
 <h4 id="setup-a-backup-plan-in-aws-backup">Setup a Backup Plan in AWS Backup</h4>
 
 <div class="notices note" ><p><em>Selection of resources from a backup plan can be done using either resource tags or direct references.</em></p>
 </div>
 
 <p>Now setup a backup plan using resource tags. Using <strong>AWS Backup</strong> this way will ensure that newly created resources that are properly tagged with be backed up via <strong>AWS Backup</strong></p>
-<p>Begin by adding resource tags to your database from the <a href="https://console.aws.amazon.com/rds/home#databases:">RDS Console</a> , click the <strong>rdspg-fcj-labs</strong> instance, then select the tags tab and choose <strong>Add</strong>.</p>
+<ol>
+<li>Begin by adding resource tags to your database from the <a href="https://console.aws.amazon.com/rds/home#databases:">RDS Console</a> , click the <strong>rdspg-fcj-labs</strong> instance, then select the tags tab and choose <strong>Add</strong>.</li>
+</ol>
 <p><img src="/images/4/4-6/13.png" alt="aws backups"></p>
+<ol start="2">
+<li>
 <p>Add <code>Environment</code> for <code>production</code> and <code>ResourceType</code> for <code>rdspg-fcj</code> tag to your <strong>rdspg-fcj-labs</strong> database.</p>
-<p>From the <a href="https://console.aws.amazon.com/backup/home">AWS Backup Console</a>  select <strong>Backup plans</strong> from the left-hand menu, then choose <strong>Create backup plan</strong>.</p>
-<p><img src="/images/4/4-6/14.png" alt="aws backups"></p>
-<p>Select <strong>Build new plan</strong>, enter Backup plan name <code>rdspg-backup-plan</code>, enter Backup rule name <code>DailyBackups</code>, select Backup vault <strong>rdspg-backup-vault</strong>, leaving everything else at the default, then click <strong>Create plan</strong>.</p>
-<p><img src="/images/4/4-6/15.png" alt="aws backups">
+</li>
+<li>
+<p>From the <a href="https://console.aws.amazon.com/backup/home">AWS Backup Console</a>  select <strong>Backup plans</strong> from the left-hand menu, then choose <strong>Create backup plan</strong>.
+<img src="/images/4/4-6/14.png" alt="aws backups"></p>
+</li>
+<li>
+<p>Select <strong>Build new plan</strong>, enter Backup plan name <code>rdspg-backup-plan</code>, enter Backup rule name <code>DailyBackups</code>, select Backup vault <strong>rdspg-backup-vault</strong>, leaving everything else at the default, then click <strong>Create plan</strong>.
+<img src="/images/4/4-6/15.png" alt="aws backups">
 <img src="/images/4/4-6/16.png" alt="aws backups"></p>
+</li>
+<li>
 <p>Complete the dialog by entering the resource assignment name, <code>rdspg-bp-resource-selection</code>, choose <strong>IAM role</strong> and select the IAM role created earlier <strong>rdspg-AWSBackupServiceRole</strong>.
 <img src="/images/4/4-6/17.png" alt="aws backups"></p>
-<p>Finally add the <strong>Environment</strong> and <strong>ResoureType</strong> tags as shown in the screengrab.</p>
-<p><img src="/images/4/4-6/18.png" alt="aws backups"></p>
+</li>
+<li>
+<p>Finally add the <strong>Environment</strong> and <strong>ResoureType</strong> tags as shown in the screengrab.
+<img src="/images/4/4-6/18.png" alt="aws backups"></p>
+</li>
+</ol>
 <p><strong>Congratulations!</strong> Now that you have created a backup plan based on tags, any databases you create in future with these tags will be automatically backed up with this plan.</p>
 
 
@@ -1939,19 +1975,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1701272519"></script>
-    <script src="/js/perfect-scrollbar.min.js?1701272519"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1701272519"></script>
-    <script src="/js/jquery.sticky.js?1701272519"></script>
-    <script src="/js/featherlight.min.js?1701272519"></script>
-    <script src="/js/highlight.pack.js?1701272519"></script>
+    <script src="/js/clipboard.min.js?1711395039"></script>
+    <script src="/js/perfect-scrollbar.min.js?1711395039"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1711395039"></script>
+    <script src="/js/jquery.sticky.js?1711395039"></script>
+    <script src="/js/featherlight.min.js?1711395039"></script>
+    <script src="/js/highlight.pack.js?1711395039"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1701272519"></script>
-    <script src="/js/learn.js?1701272519"></script>
-    <script src="/js/hugo-learn.js?1701272519"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1711395039"></script>
+    <script src="/js/learn.js?1711395039"></script>
+    <script src="/js/hugo-learn.js?1711395039"></script>
 
-    <link href="/mermaid/mermaid.css?1701272519" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1701272519"></script>
+    <link href="/mermaid/mermaid.css?1711395039" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1711395039"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

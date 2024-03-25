@@ -3,30 +3,30 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.99.1" />
+    <meta name="generator" content="Hugo 0.122.0">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Setup high availability for RDS PostgreSQL (Multi-AZ) :: AWS RDS PostgreSQL</title>
+    <title>Setup high availability for RDS PostgreSQL (Multi-AZ) :: AWS RDS POSTGRESQL FOUNDATION</title>
 
     
-    <link href="/css/nucleus.css?1701272519" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1701272519" rel="stylesheet">
-    <link href="/css/hybrid.css?1701272519" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1701272519" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1701272519" rel="stylesheet">
-    <link href="/css/auto-complete.css?1701272519" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1701272519" rel="stylesheet">
-    <link href="/css/theme.css?1701272519" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1701272519" rel="stylesheet">
+    <link href="/css/nucleus.css?1711395039" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1711395039" rel="stylesheet">
+    <link href="/css/hybrid.css?1711395039" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1711395039" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1711395039" rel="stylesheet">
+    <link href="/css/auto-complete.css?1711395039" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1711395039" rel="stylesheet">
+    <link href="/css/theme.css?1711395039" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1711395039" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1701272519" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1711395039" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1701272519"></script>
+    <script src="/js/jquery-3.3.1.min.js?1711395039"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1701272519"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1701272519"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1711395039"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1711395039"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1701272519"></script>
+<script type="text/javascript" src="/js/search.js?1711395039"></script>
 
     
   </div>
@@ -946,7 +946,7 @@
   
     
     <li data-nav-id="/7-highavailability/7-1-setup/" title="Setup high availability for RDS PostgreSQL (Multi-AZ)" class="dd-item 
-        parent
+        
         active
         
         ">
@@ -1158,7 +1158,7 @@
       <left>
     
      <b> Workshop</b> <br>
-    <img src="https://hitwebcounter.com/counter/counter.php?page=10066013&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7920860&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
      <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
     <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
      
@@ -1167,15 +1167,14 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>29-11-2023</font></i>
+        <i><font color=orange>20-10-2023</font></i>
     </left>
     <left>
         <br>
         <br>
             <b> Team </b> <br>
            
-            <i>
-                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>
+            <i> <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>
                 <a href="https://www.linkedin.com/in/hiepnguyendt"  style="color:orange">Thanh Hiệp </a>
                
         </i>
@@ -1277,22 +1276,22 @@
 <p>To configure RDS PostgreSQL instance for High availability we need to modify the instance. Select <strong>rdspg-fcj-labs</strong> instance and press the <strong>Modify</strong> button on top.</p>
 </li>
 <li>
-<p>In the <strong>Modify DB Instance: rdspg-fcj-labs</strong> page, scroll down to the <strong>Availability &amp; durability</strong> section and make sure to select <strong>Create a standby instance (recommended for production usage)</strong>.</p>
+<p>In the <strong>Modify DB Instance: rdspg-fcj-labs</strong> page, scroll down to the <strong>Availability &amp; durability</strong> section and make sure to select <strong>Create a standby instance (recommended for production usage)</strong>.
+<img src="/images/7/1/2.png" alt="HA"></p>
+</li>
+<li>
+<p>Scroll to the bottom and click on <strong>Continue</strong>. On the next window you will notice that the attribute <strong>Multi-AZ</strong> deployment is changed to <strong>Yes</strong> in the New Value column. In the Scheduling of modifications section select <strong>Apply immediately</strong> and click <strong>Modify DB Instance</strong> at the bottom.
+<img src="/images/7/1/3.png" alt="HA"></p>
 </li>
 </ol>
-<p><img src="/images/7/1/2.png" alt="HA"></p>
-<ol start="3">
-<li>Scroll to the bottom and click on <strong>Continue</strong>. On the next window you will notice that the attribute <strong>Multi-AZ</strong> deployment is changed to <strong>Yes</strong> in the New Value column. In the Scheduling of modifications section select <strong>Apply immediately</strong> and click <strong>Modify DB Instance</strong> at the bottom.</li>
-</ol>
-<p><img src="/images/7/1/3.png" alt="HA"></p>
 <p><em><strong>Now the instance will change to <strong>Modifying</strong> status and we need to wait until this operation completes - this usually takes ~5-10 mins.</strong></em></p>
 <ol start="4">
-<li>When status become <strong>Available</strong> again, click on the <strong>rdspg-fcj-labs</strong> instance identifier to review its settings.</li>
+<li>When status become <strong>Available</strong> again, click on the <strong>rdspg-fcj-labs</strong> instance identifier to review its settings.
+<img src="/images/7/1/4.png" alt="HA"></li>
 </ol>
-<p><img src="/images/7/1/4.png" alt="HA"></p>
 <p><em><strong>So we configured our RDS PostgreSQL instance for high availability and in the next section we will test this capability.</strong></em></p>
 <h4 id="optional-aws-cli">(OPTIONAL) AWS CLI</h4>
-<p>Alternatively you can convert the instance to Multi-AZ using the AWS CLI as shown below:</p>
+<p>Alternatively you can convert the instance to Multi-AZ using the AWS CLI as shown below:
 
 <div class="expand">
     <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
@@ -1316,7 +1315,7 @@ aws rds modify-db-instance \
 	--region $AWSREGION
 </code></pre>
     </div>
-</div>
+</div></p>
 
 
 
@@ -1938,19 +1937,19 @@ aws rds modify-db-instance \
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1701272519"></script>
-    <script src="/js/perfect-scrollbar.min.js?1701272519"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1701272519"></script>
-    <script src="/js/jquery.sticky.js?1701272519"></script>
-    <script src="/js/featherlight.min.js?1701272519"></script>
-    <script src="/js/highlight.pack.js?1701272519"></script>
+    <script src="/js/clipboard.min.js?1711395039"></script>
+    <script src="/js/perfect-scrollbar.min.js?1711395039"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1711395039"></script>
+    <script src="/js/jquery.sticky.js?1711395039"></script>
+    <script src="/js/featherlight.min.js?1711395039"></script>
+    <script src="/js/highlight.pack.js?1711395039"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1701272519"></script>
-    <script src="/js/learn.js?1701272519"></script>
-    <script src="/js/hugo-learn.js?1701272519"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1711395039"></script>
+    <script src="/js/learn.js?1711395039"></script>
+    <script src="/js/hugo-learn.js?1711395039"></script>
 
-    <link href="/mermaid/mermaid.css?1701272519" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1701272519"></script>
+    <link href="/mermaid/mermaid.css?1711395039" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1711395039"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

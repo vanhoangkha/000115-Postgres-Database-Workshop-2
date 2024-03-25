@@ -3,30 +3,30 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.99.1" />
+    <meta name="generator" content="Hugo 0.122.0">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Migrating to a Multi-AZ DB cluster using a read replica :: AWS RDS PostgreSQL</title>
+    <title>Migrating to a Multi-AZ DB cluster using a read replica :: AWS RDS POSTGRESQL FOUNDATION</title>
 
     
-    <link href="/css/nucleus.css?1701272519" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1701272519" rel="stylesheet">
-    <link href="/css/hybrid.css?1701272519" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1701272519" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1701272519" rel="stylesheet">
-    <link href="/css/auto-complete.css?1701272519" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1701272519" rel="stylesheet">
-    <link href="/css/theme.css?1701272519" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1701272519" rel="stylesheet">
+    <link href="/css/nucleus.css?1711395039" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1711395039" rel="stylesheet">
+    <link href="/css/hybrid.css?1711395039" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1711395039" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1711395039" rel="stylesheet">
+    <link href="/css/auto-complete.css?1711395039" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1711395039" rel="stylesheet">
+    <link href="/css/theme.css?1711395039" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1711395039" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1701272519" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1711395039" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1701272519"></script>
+    <script src="/js/jquery-3.3.1.min.js?1711395039"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1701272519"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1701272519"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1711395039"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1711395039"></script>
 <script type="text/javascript">
     
         var baseurl = "";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1701272519"></script>
+<script type="text/javascript" src="/js/search.js?1711395039"></script>
 
     
   </div>
@@ -730,7 +730,7 @@
   
     
     <li data-nav-id="/5-scalability/5-4-migrating/" title="Migrating to a Multi-AZ DB cluster using a read replica" class="dd-item 
-        parent
+        
         active
         
         ">
@@ -1158,7 +1158,7 @@
       <left>
     
      <b> Workshop</b> <br>
-    <img src="https://hitwebcounter.com/counter/counter.php?page=10066013&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7920860&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
      <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
     <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
      
@@ -1167,15 +1167,14 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>29-11-2023</font></i>
+        <i><font color=orange>20-10-2023</font></i>
     </left>
     <left>
         <br>
         <br>
             <b> Team </b> <br>
            
-            <i>
-                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>
+            <i> <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>
                 <a href="https://www.linkedin.com/in/hiepnguyendt"  style="color:orange">Thanh Hiệp </a>
                
         </i>
@@ -1271,22 +1270,24 @@
 <p>Amazon RDS creates a second DB instance using a snapshot of the source DB instance. It will uses the engines&rsquo; native asynchronous replication to update the read replica whenever there is a change to the source DB instance. The read replica operates as a DB instance that allows only read-only connections; applications can connect to a read replica just as they would to any DB instance.</p>
 <p>To migrate a Single-AZ deployment or Multi-AZ DB instance deployment to a Multi-AZ DB cluster deployment with reduced downtime, you can create a Multi-AZ DB cluster read replica.</p>
 <ol>
-<li>Find RDS PostgreSQL instance <em><strong>rdspg-fcj-labs</strong></em> under the <strong>Databases</strong> menu and click on the radio button in front of the DB Instance. Click on the Actions drop down on the right side and choose <strong>Create Read Replica.</strong></li>
+<li>
+<p>Find RDS PostgreSQL instance <em><strong>rdspg-fcj-labs</strong></em> under the <strong>Databases</strong> menu and click on the radio button in front of the DB Instance. Click on the Actions drop down on the right side and choose <strong>Create Read Replica.</strong>
+<img src="/images/5/3/1.png" alt="migrating"></p>
+</li>
+<li>
+<p>For <strong>Settings</strong>, you must provide a DB Instance Identifier (i.e. the name for this instance).
+<img src="/images/5/3/2.png" alt="migrating"></p>
+</li>
+<li>
+<p>For the <strong>Availability</strong> section, select <em><strong>Multi-AZ DB Cluster</strong></em> - new deployment option.
+<img src="/images/5/3/4.png" alt="migrating"></p>
+</li>
+<li>
+<p>For simplicity, we’ll leave the rest at their defaults. Scroll to the bottom and click <strong>Create read replica</strong></p>
+</li>
 </ol>
-<p><img src="/images/5/3/1.png" alt="migrating"></p>
-<ol start="2">
-<li>For <strong>Settings</strong>, you must provide a DB Instance Identifier (i.e. the name for this instance).</li>
-</ol>
-<p><img src="/images/5/3/2.png" alt="migrating"></p>
-<ol start="3">
-<li>For the <strong>Availability</strong> section, select <em><strong>Multi-AZ DB Cluster</strong></em> - new deployment option.</li>
-</ol>
-<p><img src="/images/5/3/4.png" alt="migrating"></p>
-<ol start="4">
-<li>For simplicity, we’ll leave the rest at their defaults. Scroll to the bottom and click <strong>Create read replica</strong></li>
-</ol>
-<p>After you click <strong>Create read replica</strong>, you’ll be taken back to the <strong>Databases</strong> page. Click the refresh icon to refresh the page and you should see the read replica being created.</p>
-<p><img src="/images/5/3/5.png" alt="migrating"></p>
+<p>After you click <strong>Create read replica</strong>, you’ll be taken back to the <strong>Databases</strong> page. Click the refresh icon to refresh the page and you should see the read replica being created.
+<img src="/images/5/3/5.png" alt="migrating"></p>
 <p><em>It will take about 10 minutes for your read replica to be created. Your primary database continues to be available as this happens.</em></p>
 <ol start="5">
 <li>Once the Read Replica status is <strong>Available</strong> on the <strong>Databases</strong> page ( you may need to use the refresh icon to see the latest Status ), click on the new read replica instance.</li>
@@ -1297,22 +1298,22 @@
 </ol>
 <p><img src="/images/5/3/7.png" alt="migrating"></p>
 <ol start="7">
-<li>Next, scroll down to view the replication details. You can see that our primary instance is replicating to our read replica instance.</li>
+<li>Next, scroll down to view the replication details. You can see that our primary instance is replicating to our read replica instance.
+<img src="/images/5/3/8.png" alt="migrating"></li>
 </ol>
-<p><img src="/images/5/3/8.png" alt="migrating"></p>
 <p>You can then connect to the read replica using its endpoint and the same username and password as the source instance. For example, connect and execute the following query to check the replication lag between the source and the replica:</p>
 <pre tabindex="0"><code>SELECT extract(epoch from now() - pg_last_xact_replay_timestamp()) AS replica_lag;
 </code></pre><p><img src="/images/5/3/9.png" alt="migrating"></p>
 <p><em><strong>You can also promote this Multi-AZ read replica cluster to a stand-alone cluster. We will do that in the next step.</strong></em></p>
 <ol start="8">
-<li>Click on <strong>Actions</strong>, and select <strong>Promote</strong> to detach and promote the <em><strong>rdspg-fcj-labs-read-test</strong></em> Multi-AZ DB Cluster by selecting <strong>Promote read replica</strong></li>
+<li>Click on <strong>Actions</strong>, and select <strong>Promote</strong> to detach and promote the <em><strong>rdspg-fcj-labs-read-test</strong></em> Multi-AZ DB Cluster by selecting <strong>Promote read replica</strong>
+<img src="/images/5/3/10.png" alt="migrating"></li>
 </ol>
-<p><img src="/images/5/3/10.png" alt="migrating"></p>
 <p>It will take about 1-2 minutes for your read replica to be detached and promoted as an independent RDS DB Cluster with Multi-AZ DB Cluster deployment option.</p>
 <p>At this point, you have successfully migrated your RDS PostgreSQL instance with Multi-AZ DB Instance deployment mode to the RDS PostgreSQL Multi-AZ DB Cluster deployment option.</p>
 <p><strong>Congratulations</strong>: In this lab, you added a Multi-AZ DB Cluster read replica instance to your configuration to migrate your application/database from Multi-AZ DB Instance deployment option to the Multi-AZ DB Cluster deployment option.</p>
 <h4 id="optional-aws-cli">(OPTIONAL) AWS CLI</h4>
-<p>Alternatively you can promote the read replica using the AWS CLI as shown below:</p>
+<p>Alternatively you can promote the read replica using the AWS CLI as shown below:
 
 <div class="expand">
     <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
@@ -1340,7 +1341,7 @@ aws rds promote-read-replica-db-cluster \
         --db-cluster-identifier rdspg-fcj-labs-read-test
 </code></pre>
     </div>
-</div>
+</div></p>
 
 
 
@@ -1965,19 +1966,19 @@ aws rds promote-read-replica-db-cluster \
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1701272519"></script>
-    <script src="/js/perfect-scrollbar.min.js?1701272519"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1701272519"></script>
-    <script src="/js/jquery.sticky.js?1701272519"></script>
-    <script src="/js/featherlight.min.js?1701272519"></script>
-    <script src="/js/highlight.pack.js?1701272519"></script>
+    <script src="/js/clipboard.min.js?1711395039"></script>
+    <script src="/js/perfect-scrollbar.min.js?1711395039"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1711395039"></script>
+    <script src="/js/jquery.sticky.js?1711395039"></script>
+    <script src="/js/featherlight.min.js?1711395039"></script>
+    <script src="/js/highlight.pack.js?1711395039"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1701272519"></script>
-    <script src="/js/learn.js?1701272519"></script>
-    <script src="/js/hugo-learn.js?1701272519"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1711395039"></script>
+    <script src="/js/learn.js?1711395039"></script>
+    <script src="/js/hugo-learn.js?1711395039"></script>
 
-    <link href="/mermaid/mermaid.css?1701272519" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1701272519"></script>
+    <link href="/mermaid/mermaid.css?1711395039" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1711395039"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -3,30 +3,30 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.99.1" />
+    <meta name="generator" content="Hugo 0.122.0">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Tạo S3 Gateway endpoint :: AWS System Manager</title>
+    <title>Thực hiện chuyển đổi dự phòng để xác minh tính sẵn sàng cao :: AWS RDS POSTGRESQL CƠ BẢN</title>
 
     
-    <link href="/css/nucleus.css?1701272519" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1701272519" rel="stylesheet">
-    <link href="/css/hybrid.css?1701272519" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1701272519" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1701272519" rel="stylesheet">
-    <link href="/css/auto-complete.css?1701272519" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1701272519" rel="stylesheet">
-    <link href="/css/theme.css?1701272519" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1701272519" rel="stylesheet">
+    <link href="/css/nucleus.css?1711395039" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1711395039" rel="stylesheet">
+    <link href="/css/hybrid.css?1711395039" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1711395039" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1711395039" rel="stylesheet">
+    <link href="/css/auto-complete.css?1711395039" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1711395039" rel="stylesheet">
+    <link href="/css/theme.css?1711395039" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1711395039" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1701272519" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1711395039" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1701272519"></script>
+    <script src="/js/jquery-3.3.1.min.js?1711395039"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1701272519"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1701272519"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1711395039"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1711395039"></script>
 <script type="text/javascript">
     
         var baseurl = "\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1701272519"></script>
+<script type="text/javascript" src="/js/search.js?1711395039"></script>
 
     
   </div>
@@ -82,13 +82,13 @@
  
   
     
-    <li data-nav-id="/vi/1-introduce/" title="Introduction" class="dd-item 
+    <li data-nav-id="/vi/1-introduce/" title="Giới thiệu" class="dd-item 
         
         
         
         ">
       <a href="/vi/1-introduce/">
-           <b> 1. </b> Introduction
+           <b> 1. </b> Giới thiệu
           
             <i class="fas fa-check read-icon"></i>
           
@@ -108,423 +108,13 @@
  
   
     
-    <li data-nav-id="/vi/4-backuprecovery/" title="Introduction" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/vi/4-backuprecovery/">
-           <b> 1. </b> Introduction
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-            
-          
-          
-          
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/4-backuprecovery/4-1-automatedbackups/" title="Introduction" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/vi/4-backuprecovery/4-1-automatedbackups/">
-           <b> 1. </b> Introduction
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/4-backuprecovery/4-2-modifybackups/" title="Introduction" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/vi/4-backuprecovery/4-2-modifybackups/">
-           <b> 1. </b> Introduction
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/4-backuprecovery/4-3-manualsnapshots/" title="Introduction" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/vi/4-backuprecovery/4-3-manualsnapshots/">
-           <b> 1. </b> Introduction
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/4-backuprecovery/4-4-restoresnapshot/" title="Introduction" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/vi/4-backuprecovery/4-4-restoresnapshot/">
-           <b> 1. </b> Introduction
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/4-backuprecovery/4-5-pointintimerestore/" title="Introduction" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/vi/4-backuprecovery/4-5-pointintimerestore/">
-           <b> 1. </b> Introduction
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/4-backuprecovery/4-6-awsbackup/" title="Introduction" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/vi/4-backuprecovery/4-6-awsbackup/">
-           <b> 1. </b> Introduction
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
-              
-    </li>
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/8-learnmoreaboutpostgresql/" title="Introduction" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/vi/8-learnmoreaboutpostgresql/">
-           <b> 1. </b> Introduction
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/5-scalability/" title="Các bước chuẩn bị" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/vi/5-scalability/">
-           <b> 2. </b> Các bước chuẩn bị
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-      
-        <ul>
-          
-          
-            
-          
-          
-          
-        
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/5-scalability/5-1-create/" title="Chuẩn bị VPC và EC2" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/vi/5-scalability/5-1-create/">
-           <b> 2.1 </b> Chuẩn bị VPC và EC2
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/5-scalability/5-3-perform/" title="Các bước chuẩn bị" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/vi/5-scalability/5-3-perform/">
-           <b> 2. </b> Các bước chuẩn bị
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/5-scalability/5-4-migrating/" title="Các bước chuẩn bị" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/vi/5-scalability/5-4-migrating/">
-           <b> 2. </b> Các bước chuẩn bị
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/5-scalability/5-5-multiazdbcluster/" title="Các bước chuẩn bị" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/vi/5-scalability/5-5-multiazdbcluster/">
-           <b> 2. </b> Các bước chuẩn bị
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-            
-            
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/5-scalability/5-2-promote/" title="Tạo IAM Role" class="dd-item 
-        
-        
-        
-        ">
-      <a href="/vi/5-scalability/5-2-promote/">
-           <b> 2.2 </b> Tạo IAM Role
-          
-            <i class="fas fa-check read-icon"></i>
-          
-      </a>
-      
-              
-    </li>
-  
- 
-
-            
-          
-        
-        </ul>
-              
-    </li>
-  
- 
-
-          
-          
-
-
-
-
- 
-  
-    
-    <li data-nav-id="/vi/2-databaseupgrade/" title="Database Upgrade" class="dd-item 
+    <li data-nav-id="/vi/2-databaseupgrade/" title="Nâng cấp cơ sở dữ liệu" class="dd-item 
         
         
         
         ">
       <a href="/vi/2-databaseupgrade/">
-           <b> 2. </b> Database Upgrade
+           <b> 2. </b> Nâng cấp cơ sở dữ liệu
           
             <i class="fas fa-check read-icon"></i>
           
@@ -549,13 +139,13 @@
  
   
     
-    <li data-nav-id="/vi/2-databaseupgrade/2-1-automaticminorupgrade/" title="Automatic minor upgrade" class="dd-item 
+    <li data-nav-id="/vi/2-databaseupgrade/2-1-automaticminorupgrade/" title="Tự động nâng cấp phiên bản nhỏ" class="dd-item 
         
         
         
         ">
       <a href="/vi/2-databaseupgrade/2-1-automaticminorupgrade/">
-           <b> 2.1 </b> Automatic minor upgrade
+           <b> 2.1 </b> Tự động nâng cấp phiên bản nhỏ
           
             <i class="fas fa-check read-icon"></i>
           
@@ -577,13 +167,13 @@
  
   
     
-    <li data-nav-id="/vi/2-databaseupgrade/2-2-upgradingtheengineversion/" title="Quản lý session logs" class="dd-item 
+    <li data-nav-id="/vi/2-databaseupgrade/2-2-upgradingtheengineversion/" title="Nâng cấp engine version" class="dd-item 
         
         
         
         ">
       <a href="/vi/2-databaseupgrade/2-2-upgradingtheengineversion/">
-           <b> 4. </b> Quản lý session logs
+           <b> 2.2 </b> Nâng cấp engine version
           
             <i class="fas fa-check read-icon"></i>
           
@@ -605,13 +195,13 @@
  
   
     
-    <li data-nav-id="/vi/2-databaseupgrade/2-3-validatetheupgradeprocess/" title="Quản lý session logs" class="dd-item 
+    <li data-nav-id="/vi/2-databaseupgrade/2-3-validatetheupgradeprocess/" title="Kiểm tra quá trình nâng cấp" class="dd-item 
         
         
         
         ">
       <a href="/vi/2-databaseupgrade/2-3-validatetheupgradeprocess/">
-           <b> 4. </b> Quản lý session logs
+           <b> 2.3 </b> Kiểm tra quá trình nâng cấp
           
             <i class="fas fa-check read-icon"></i>
           
@@ -640,13 +230,13 @@
  
   
     
-    <li data-nav-id="/vi/3-performancemonitoringandoptimization/" title="Tạo kết nối đến máy chủ EC2" class="dd-item 
+    <li data-nav-id="/vi/3-performancemonitoringandoptimization/" title="Giám sát hiệu suất" class="dd-item 
         
         
         
         ">
       <a href="/vi/3-performancemonitoringandoptimization/">
-           <b> 3. </b> Tạo kết nối đến máy chủ EC2
+           <b> 3. </b> Giám sát hiệu suất
           
             <i class="fas fa-check read-icon"></i>
           
@@ -671,13 +261,13 @@
  
   
     
-    <li data-nav-id="/vi/3-performancemonitoringandoptimization/3-1-cloudwatchlogsalerts/" title="Tạo kết nối đến máy chủ EC2" class="dd-item 
+    <li data-nav-id="/vi/3-performancemonitoringandoptimization/3-1-cloudwatchlogsalerts/" title="CloudWatch Logs &amp; Alerts" class="dd-item 
         
         
         
         ">
       <a href="/vi/3-performancemonitoringandoptimization/3-1-cloudwatchlogsalerts/">
-           <b> 3. </b> Tạo kết nối đến máy chủ EC2
+           <b> 3.1 </b> CloudWatch Logs &amp; Alerts
           
             <i class="fas fa-check read-icon"></i>
           
@@ -699,13 +289,13 @@
  
   
     
-    <li data-nav-id="/vi/3-performancemonitoringandoptimization/3-2-createsomedbactivity/" title="Tạo kết nối đến máy chủ EC2" class="dd-item 
+    <li data-nav-id="/vi/3-performancemonitoringandoptimization/3-2-createsomedbactivity/" title="Tạo một số hoạt động cho cơ sở dữ liệu " class="dd-item 
         
         
         
         ">
       <a href="/vi/3-performancemonitoringandoptimization/3-2-createsomedbactivity/">
-           <b> 3. </b> Tạo kết nối đến máy chủ EC2
+           <b> 3.2 </b> Tạo một số hoạt động cho cơ sở dữ liệu 
           
             <i class="fas fa-check read-icon"></i>
           
@@ -727,13 +317,13 @@
  
   
     
-    <li data-nav-id="/vi/3-performancemonitoringandoptimization/3-3-reviewingperformance/" title="Tạo kết nối đến máy chủ EC2" class="dd-item 
+    <li data-nav-id="/vi/3-performancemonitoringandoptimization/3-3-reviewingperformance/" title="Đánh giá hiệu năng" class="dd-item 
         
         
         
         ">
       <a href="/vi/3-performancemonitoringandoptimization/3-3-reviewingperformance/">
-           <b> 3. </b> Tạo kết nối đến máy chủ EC2
+           <b> 3.3 </b> Đánh giá hiệu năng
           
             <i class="fas fa-check read-icon"></i>
           
@@ -755,13 +345,13 @@
  
   
     
-    <li data-nav-id="/vi/3-performancemonitoringandoptimization/3-4-databaseloadtest/" title="Tạo kết nối đến máy chủ EC2" class="dd-item 
+    <li data-nav-id="/vi/3-performancemonitoringandoptimization/3-4-databaseloadtest/" title="Kiểm tra khả năng chịu tải của cơ sở dữ liệu" class="dd-item 
         
         
         
         ">
       <a href="/vi/3-performancemonitoringandoptimization/3-4-databaseloadtest/">
-           <b> 3. </b> Tạo kết nối đến máy chủ EC2
+           <b> 3.4 </b> Kiểm tra khả năng chịu tải của cơ sở dữ liệu
           
             <i class="fas fa-check read-icon"></i>
           
@@ -783,13 +373,13 @@
  
   
     
-    <li data-nav-id="/vi/3-performancemonitoringandoptimization/3-5-makeyourloadtestrunfaster/" title="Tạo kết nối đến máy chủ EC2" class="dd-item 
+    <li data-nav-id="/vi/3-performancemonitoringandoptimization/3-5-makeyourloadtestrunfaster/" title="Kiểm tra khả năng chịu tải nhanh hơn" class="dd-item 
         
         
         
         ">
       <a href="/vi/3-performancemonitoringandoptimization/3-5-makeyourloadtestrunfaster/">
-           <b> 3. </b> Tạo kết nối đến máy chủ EC2
+           <b> 3.5 </b> Kiểm tra khả năng chịu tải nhanh hơn
           
             <i class="fas fa-check read-icon"></i>
           
@@ -818,13 +408,397 @@
  
   
     
-    <li data-nav-id="/vi/6-parametergroups/" title="Quản lý session logs" class="dd-item 
+    <li data-nav-id="/vi/4-backuprecovery/" title="Sao lưu và phục hồi" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/4-backuprecovery/">
+           <b> 4. </b> Sao lưu và phục hồi
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/4-backuprecovery/4-1-automatedbackups/" title="Tự động sao lưu dữ liệu" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/4-backuprecovery/4-1-automatedbackups/">
+           <b> 4.1.</b> Tự động sao lưu dữ liệu
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/4-backuprecovery/4-2-modifybackups/" title="Điều chỉnh bản sao lưu" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/4-backuprecovery/4-2-modifybackups/">
+           <b> 4.2.</b> Điều chỉnh bản sao lưu
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/4-backuprecovery/4-3-manualsnapshots/" title="Snapshots thủ công" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/4-backuprecovery/4-3-manualsnapshots/">
+           <b> 4.3. </b> Snapshots thủ công
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/4-backuprecovery/4-4-restoresnapshot/" title="Khôi phục Snapshot" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/4-backuprecovery/4-4-restoresnapshot/">
+           <b> 4.4. </b> Khôi phục Snapshot
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/4-backuprecovery/4-5-pointintimerestore/" title="Point in Time Restore" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/4-backuprecovery/4-5-pointintimerestore/">
+           <b> 4.5. </b> Point in Time Restore
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/4-backuprecovery/4-6-awsbackup/" title="AWS Backup" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/4-backuprecovery/4-6-awsbackup/">
+           <b> 4.6. </b> AWS Backup
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-scalability/" title="Scalability" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-scalability/">
+           <b> 5. </b> Scalability
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-scalability/5-1-create/" title="Tạo Read-replica để cung cấp khả năng mở rộng đọc" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-scalability/5-1-create/">
+           <b> 5.1. </b> Tạo Read-replica để cung cấp khả năng mở rộng đọc
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-scalability/5-2-promote/" title="Chuyển đổi Read Replica thành instance độc lập" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-scalability/5-2-promote/">
+           <b> 5.2. </b> Chuyển đổi Read Replica thành instance độc lập
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-scalability/5-3-perform/" title="Perform vertical scaling" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-scalability/5-3-perform/">
+           <b> 5.3. </b> Perform vertical scaling
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-scalability/5-4-migrating/" title="Di chuyển sang DB Multi-AZ cluster bằng read replica" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-scalability/5-4-migrating/">
+           <b> 5.4. </b> Di chuyển sang DB Multi-AZ cluster bằng read replica
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/5-scalability/5-5-multiazdbcluster/" title="Tạo DB instance read replica từ a Multi-AZ DB cluster" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/5-scalability/5-5-multiazdbcluster/">
+           <b> 5.5. </b> Tạo DB instance read replica từ a Multi-AZ DB cluster
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/6-parametergroups/" title="Parameter Groups" class="dd-item 
         
         
         
         ">
       <a href="/vi/6-parametergroups/">
-           <b> 4. </b> Quản lý session logs
+           <b> 6. </b> Parameter Groups
           
             <i class="fas fa-check read-icon"></i>
           
@@ -849,13 +823,13 @@
  
   
     
-    <li data-nav-id="/vi/6-parametergroups/6-1-create/" title="Cập nhật IAM Role" class="dd-item 
+    <li data-nav-id="/vi/6-parametergroups/6-1-create/" title="Tạo Custom Parameter Group" class="dd-item 
         
         
         
         ">
       <a href="/vi/6-parametergroups/6-1-create/">
-           <b> 4.1 </b> Cập nhật IAM Role
+           <b> 6.1. </b> Tạo Custom Parameter Group
           
             <i class="fas fa-check read-icon"></i>
           
@@ -877,13 +851,13 @@
  
   
     
-    <li data-nav-id="/vi/6-parametergroups/6-2-modify/" title="Tạo S3 Bucket" class="dd-item 
+    <li data-nav-id="/vi/6-parametergroups/6-2-modify/" title="Điều chỉnh Custom Parameter Group" class="dd-item 
         
         
         
         ">
       <a href="/vi/6-parametergroups/6-2-modify/">
-           <b> 4.2 </b> Tạo S3 Bucket
+           <b> 6.2. </b> Điều chỉnh Custom Parameter Group
           
             <i class="fas fa-check read-icon"></i>
           
@@ -905,13 +879,13 @@
  
   
     
-    <li data-nav-id="/vi/6-parametergroups/6-3-apply/" title="Tạo S3 Gateway endpoint" class="dd-item 
+    <li data-nav-id="/vi/6-parametergroups/6-3-apply/" title="Áp dụng Custom Parameter Group" class="dd-item 
         
         
         
         ">
       <a href="/vi/6-parametergroups/6-3-apply/">
-           <b> 4.3 </b> Tạo S3 Gateway endpoint
+           <b> 6.3 </b> Áp dụng Custom Parameter Group
           
             <i class="fas fa-check read-icon"></i>
           
@@ -940,13 +914,13 @@
  
   
     
-    <li data-nav-id="/vi/7-highavailability/" title="Quản lý session logs" class="dd-item 
+    <li data-nav-id="/vi/7-highavailability/" title="Tính sẵn sàng cao" class="dd-item 
         parent
         
         
         ">
       <a href="/vi/7-highavailability/">
-           <b> 4. </b> Quản lý session logs
+           <b> 7. </b> Tính sẵn sàng cao
           
             <i class="fas fa-check read-icon"></i>
           
@@ -971,13 +945,13 @@
  
   
     
-    <li data-nav-id="/vi/7-highavailability/7-1-setup/" title="Cập nhật IAM Role" class="dd-item 
+    <li data-nav-id="/vi/7-highavailability/7-1-setup/" title="Thiết lập tính sẵn sàng cao cho RDS PostgreSQL (Multi-AZ)" class="dd-item 
         
         
         
         ">
       <a href="/vi/7-highavailability/7-1-setup/">
-           <b> 4.1 </b> Cập nhật IAM Role
+           <b> 7.1. </b> Thiết lập tính sẵn sàng cao cho RDS PostgreSQL (Multi-AZ)
           
             <i class="fas fa-check read-icon"></i>
           
@@ -999,13 +973,13 @@
  
   
     
-    <li data-nav-id="/vi/7-highavailability/7-2-connect/" title="Tạo S3 Bucket" class="dd-item 
+    <li data-nav-id="/vi/7-highavailability/7-2-connect/" title="Kết nối đến Multi-AZ endpoint" class="dd-item 
         
         
         
         ">
       <a href="/vi/7-highavailability/7-2-connect/">
-           <b> 4.2 </b> Tạo S3 Bucket
+           <b> 7.2. </b> Kết nối đến Multi-AZ endpoint
           
             <i class="fas fa-check read-icon"></i>
           
@@ -1027,13 +1001,13 @@
  
   
     
-    <li data-nav-id="/vi/7-highavailability/7-3-perform/" title="Tạo S3 Gateway endpoint" class="dd-item 
-        parent
+    <li data-nav-id="/vi/7-highavailability/7-3-perform/" title="Thực hiện chuyển đổi dự phòng để xác minh tính sẵn sàng cao" class="dd-item 
+        
         active
         
         ">
       <a href="/vi/7-highavailability/7-3-perform/">
-           <b> 4.3 </b> Tạo S3 Gateway endpoint
+           <b> 7.3 </b> Thực hiện chuyển đổi dự phòng để xác minh tính sẵn sàng cao
           
             <i class="fas fa-check read-icon"></i>
           
@@ -1062,13 +1036,39 @@
  
   
     
-    <li data-nav-id="/vi/9-cleanup/" title="Dọn dẹp tài nguyên  " class="dd-item 
+    <li data-nav-id="/vi/8-learnmoreaboutpostgresql/" title="Tìm hiểu thêm về PostgreSQL" class="dd-item 
+        
+        
+        
+        ">
+      <a href="/vi/8-learnmoreaboutpostgresql/">
+           <b> 8. </b> Tìm hiểu thêm về PostgreSQL
+          
+            <i class="fas fa-check read-icon"></i>
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/vi/9-cleanup/" title="Xóa tài nguyên" class="dd-item 
         
         
         
         ">
       <a href="/vi/9-cleanup/">
-          <b>6. </b>Dọn dẹp tài nguyên  
+          <b>9. </b>Xóa tài nguyên
           
             <i class="fas fa-check read-icon"></i>
           
@@ -1158,7 +1158,7 @@
       <left>
     
      <b> Workshop</b> <br>
-    <img src="https://hitwebcounter.com/counter/counter.php?page=10066013&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
+    <img src="https://hitwebcounter.com/counter/counter.php?page=7920860&style=0038&nbdigits=9&type=page&initCount=0" title="Migrate" Alt="web counter"   border="0" /></a>  <br>
      <b> <a href="https://cloudjourney.awsstudygroup.com/">Cloud Journey</a></b> <br>
     <img src="https://hitwebcounter.com/counter/counter.php?page=7830807&style=0038&nbdigits=9&type=page&initCount=0" title="Total CLoud Journey" Alt="web counter"   border="0"   />
      
@@ -1167,15 +1167,14 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>29-11-2023</font></i>
+        <i><font color=orange>20-10-2023</font></i>
     </left>
     <left>
         <br>
         <br>
             <b> Team </b> <br>
            
-            <i>
-                <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>
+            <i> <a href="https://www.linkedin.com/in/jotaguy"  style="color:orange">Gia Hưng </a> <br>
                 <a href="https://www.linkedin.com/in/hiepnguyendt"  style="color:orange">Thanh Hiệp </a>
                
         </i>
@@ -1221,7 +1220,7 @@
             
           
           
-            <a href='/vi/'>AWS RDS PostgreSQL</a> > <a href='/vi/7-highavailability/'>Quản lý session logs</a> > Tạo S3 Gateway endpoint
+            <a href='/vi/'>AWS RDS PostgreSQL</a> > <a href='/vi/7-highavailability/'>Tính sẵn sàng cao</a> > Thực hiện chuyển đổi dự phòng để xác minh tính sẵn sàng cao
           
         
           
@@ -1234,7 +1233,15 @@
                 
                     <div class="progress">
     <div class="wrapper">
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 
@@ -1250,7 +1257,7 @@
           
             <h1>
               
-              Tạo S3 Gateway endpoint
+              Thực hiện chuyển đổi dự phòng để xác minh tính sẵn sàng cao
             </h1>
           
 
@@ -1258,34 +1265,56 @@
 
 
 
-	<ol>
-<li>Truy cập vào <a href="https://console.aws.amazon.com/vpc/home">giao diện quản trị dịch vụ VPC</a></li>
+	<p><strong>RDS PostgreSQL</strong> cung cấp cho khách hàng tùy chọn mô phỏng lỗi AZ và Tính sẵn sàng cao bằng cách cung cấp tùy chọn khởi động lại PostgreSQL instance bằng tùy chọn chuyển đổi dự phòng. Tùy chọn này sẽ bắt đầu chuyển đổi dự phòng cấp AZ cho instance - instance trong AZ phụ sẽ trở thành instance chính và instance trong AZ chính sẽ trở thành instance phụ mới.</p>
+<ol>
+<li>
+<p>Truy cập giao diện Amazon RDS <a href="https://console.aws.amazon.com/rds/home#databases">console</a>  và chọn <strong>rdspg-fcj-labs</strong> instance. Click vào <strong>Actions</strong> và chọn <strong>Reboot</strong>.
+<img src="/images/7/3/1.png" alt="HA"></p>
+</li>
+<li>
+<p>Đảm bảo kiểm tra tùy chọn <strong>Reboot With Failover</strong>, và click <strong>Reboot</strong>.
+<img src="/images/7/3/2.png" alt="HA"></p>
+</li>
+<li>
+<p>Tiếp theo, nhấp vào tab <strong>Logs &amp; Events</strong> để kiểm tra trạng thái chuyển đổi dự phòng. Quan sát sự thay đổi của các sự kiện khi quá trình chuyển đổi dự phòng trải qua các bước khác nhau.
+<img src="/images/7/3/3.png" alt="HA"></p>
+</li>
+<li>
+<p>Bây giờ, hãy quay lại với terminal của EC2 instance, nơi lệnh vòng lặp while vẫn đang chạy. Bạn sẽ nhận thấy sự thay đổi trong <em><strong>địa chỉ IP</strong></em> như hình bên dưới. Bạn cũng sẽ nhận thấy một thông báo ngắn gọn về sự gián đoạn ngay trong thời điểm chuyển đổi dự phòng. Sau khi phiên bản cơ sở dữ liệu khả dụng trở lại và hoạt động đối với cơ sở dữ liệu hoàn tất thành công.
+<img src="/images/7/3/4.png" alt="HA"></p>
+</li>
 </ol>
-<ul>
-<li>Click <strong>Endpoints</strong>.</li>
-<li>Click <strong>Create endpoint</strong>.</li>
-</ul>
-<ol start="2">
-<li>Tại trang <strong>Create endpoint</strong>.</li>
-</ol>
-<ul>
-<li>Tại mục <strong>Name tag</strong> điền <strong>S3GW</strong>.</li>
-<li>Tại mục <strong>Service Category</strong> click chọn <strong>AWS services</strong>.</li>
-<li>Tại ô tìm kiếm điền <strong>S3</strong>, sau đó chọn <strong>com.amazonaws.[region].s3</strong></li>
-</ul>
-<p><img src="/images/4.s3/008-s3.png" alt="S3"></p>
-<ol start="3">
-<li>Tại mục <strong>Services</strong> chọn <strong>com.amazonaws.[region].s3</strong> có Type là <strong>Gateway</strong>.</li>
-</ol>
-<ul>
-<li>Tại mục <strong>VPC</strong> , chọn <strong>Lab VPC</strong>.</li>
-<li>Tại mục <strong>Route tables</strong>, chọn cả 2 route table.</li>
-</ul>
-<p><img src="/images/4.s3/009-s3.png" alt="S3"></p>
-<ol start="4">
-<li>Kéo chuột xuống dưới cùng, click <strong>Create endpoint</strong>.</li>
-</ol>
-<p>Bước tiếp theo chúng ta sẽ tiến hành cấu hình Session Manager để có thể lưu trữ các session logs tới S3 bucket chúng ta đã tạo.</p>
+<p>Cũng lưu ý rằng RDS endpoint đã bắt đầu phân giải thành địa chỉ IP mới (từ một AZ khác)<br>
+<em><strong>(Note: In your lab the IP will be different).</strong></em></p>
+
+<div class="notices note" ><p>Bạn cũng sẽ thấy <strong>status và AZ</strong> trong Amazon RDS service console được cập nhật khi quá trình chuyển đổi dự phòng diễn ra nhưng có thể có độ trễ ngắn trước khi <strong>status và AZ</strong> được làm mới.</p>
+</div>
+
+<h4 id="không-bắt-buộc-aws-cli">(Không bắt buộc) AWS CLI</h4>
+<p>Ngoài ra, bạn có thể khởi động lại instane với chuyển đổi dự phòng bằng AWS CLI như dưới đây:
+
+<div class="expand">
+    <div class="expand-label" style="cursor: pointer;" onclick="$h = $(this);$h.next('div').slideToggle(100,function () {$h.children('i').attr('class',function () {return $h.next('div').is(':visible') ? 'fas fa-chevron-down' : 'fas fa-chevron-right';});});">
+        <i style="font-size:x-small;" class="fas fa-chevron-right"></i>
+        <span>
+        
+    	
+    	Code
+    	
+    	</span>
+    </div>
+    <div class="expand-content" style="display: none;">
+        <p>Lệnh sau khởi động lại instane có chuyển đổi dự phòng.</p>
+<pre tabindex="0"><code>
+AWSREGION=`aws configure get region`
+
+aws rds reboot-db-instance \
+	--db-instance-identifier rdspg-fcj-labs \
+	--region $AWSREGION \
+	--force-failover
+</code></pre>
+    </div>
+</div></p>
 
 
 
@@ -1403,70 +1432,6 @@
             
         
                     
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
-            
-        
-                    
-            
-        
-                    
-                        
-            
-            
-                
-                    
-                
-                
-
-                    
-                    
-                    
-
-                    
             
         
                     
@@ -1582,6 +1547,54 @@
                     
                     
 
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
                     
                         
             
@@ -1876,6 +1889,22 @@
                     
                         
                         
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
                     
                 
                 
@@ -1897,10 +1926,10 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/vi/7-highavailability/7-2-connect/" title="Tạo S3 Bucket"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/vi/7-highavailability/7-2-connect/" title="Kết nối đến Multi-AZ endpoint"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/vi/9-cleanup/" title="Dọn dẹp tài nguyên  " style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/vi/8-learnmoreaboutpostgresql/" title="Tìm hiểu thêm về PostgreSQL" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1910,19 +1939,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1701272519"></script>
-    <script src="/js/perfect-scrollbar.min.js?1701272519"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1701272519"></script>
-    <script src="/js/jquery.sticky.js?1701272519"></script>
-    <script src="/js/featherlight.min.js?1701272519"></script>
-    <script src="/js/highlight.pack.js?1701272519"></script>
+    <script src="/js/clipboard.min.js?1711395039"></script>
+    <script src="/js/perfect-scrollbar.min.js?1711395039"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1711395039"></script>
+    <script src="/js/jquery.sticky.js?1711395039"></script>
+    <script src="/js/featherlight.min.js?1711395039"></script>
+    <script src="/js/highlight.pack.js?1711395039"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1701272519"></script>
-    <script src="/js/learn.js?1701272519"></script>
-    <script src="/js/hugo-learn.js?1701272519"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1711395039"></script>
+    <script src="/js/learn.js?1711395039"></script>
+    <script src="/js/hugo-learn.js?1711395039"></script>
 
-    <link href="/mermaid/mermaid.css?1701272519" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1701272519"></script>
+    <link href="/mermaid/mermaid.css?1711395039" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1711395039"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
