@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.122.0">
+    <meta name="generator" content="Hugo 0.133.0">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Kiểm tra khả năng chịu tải của cơ sở dữ liệu :: AWS RDS POSTGRESQL CƠ BẢN</title>
 
     
-    <link href="/css/nucleus.css?1711395039" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1711395039" rel="stylesheet">
-    <link href="/css/hybrid.css?1711395039" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1711395039" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1711395039" rel="stylesheet">
-    <link href="/css/auto-complete.css?1711395039" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1711395039" rel="stylesheet">
-    <link href="/css/theme.css?1711395039" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1711395039" rel="stylesheet">
+    <link href="/css/nucleus.css?1733824419" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1733824419" rel="stylesheet">
+    <link href="/css/hybrid.css?1733824419" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1733824419" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1733824419" rel="stylesheet">
+    <link href="/css/auto-complete.css?1733824419" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1733824419" rel="stylesheet">
+    <link href="/css/theme.css?1733824419" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1733824419" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1711395039" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1733824419" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1711395039"></script>
+    <script src="/js/jquery-3.3.1.min.js?1733824419"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1711395039"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1711395039"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1733824419"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1733824419"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/vi";
+        var baseurl = "\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1711395039"></script>
+<script type="text/javascript" src="/js/search.js?1733824419"></script>
 
     
   </div>
@@ -1167,7 +1167,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>20-10-2023</font></i>
+        <i><font color=orange>10-12-2024</font></i>
     </left>
     <left>
         <br>
@@ -1273,17 +1273,17 @@
 <ol>
 <li>
 <p>Bắt đầu bằng cách xem tab monitoring. Bạn sẽ thấy một số thay đổi trong dữ liệu khi load test, ví dụ: bây giờ bạn sẽ thấy số lượng kết nối cơ sở dữ liệu tăng lên đáng kể.
-<img src="/images/3/3-4/1.png" alt="data load test">
-<img src="/images/3/3-4/2.png" alt="data load test"></p>
+<img alt="data load test" src="/images/3/3-4/1.png">
+<img alt="data load test" src="/images/3/3-4/2.png"></p>
 </li>
 <li>
 <p>Chúng ta hãy truy cập vào <strong>Performance Insights</strong> và xem các biểu đồ khác nhau khi thực hiện kiểm tra chịu tải.</p>
 <p><em>Counter metrics</em>
-<img src="/images/3/3-4/3.png" alt="data load test"></p>
+<img alt="data load test" src="/images/3/3-4/3.png"></p>
 <p><em>Database load</em>
-<img src="/images/3/3-4/4.png" alt="data load test"></p>
+<img alt="data load test" src="/images/3/3-4/4.png"></p>
 <p><em>Top SQL</em>
-<img src="/images/3/3-4/5.png" alt="data load test"></p>
+<img alt="data load test" src="/images/3/3-4/5.png"></p>
 <p>Lưu ý rằng trong ví dụ trên, có một vùng lớn màu xanh da trời trên biểu đồ tải Cơ sở dữ liệu. Vùng màu xanh da trời tương ứng với một số lượng lớn các phiên cơ sở dữ liệu đang chờ trong sự kiện <strong>WALWriteLock</strong> &amp; <strong>DataFileRead</strong>.</p>
 <p>Từ quan điểm tối ưu hóa hiệu suất, nếu chúng tôi có thể tìm ra cách giảm số phiên chờ trong sự kiện <strong>WALWriteLock</strong> &amp; <strong>DataFileRead</strong>, khối lượng công việc của chúng tôi có thể chạy nhanh hơn.
 
@@ -1293,7 +1293,7 @@
 </li>
 <li>
 <p>Kiểm tra email của bạn. Bạn sẽ đã nhận được thông báo qua email về cảnh báo <strong>CPU Utilization</strong> mà bạn đã thiết lập trước đó ở bài thực hành này.
-<img src="/images/3/3-4/6.png" alt="data load test"></p>
+<img alt="data load test" src="/images/3/3-4/6.png"></p>
 </li>
 </ol>
 
@@ -1920,19 +1920,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1711395039"></script>
-    <script src="/js/perfect-scrollbar.min.js?1711395039"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1711395039"></script>
-    <script src="/js/jquery.sticky.js?1711395039"></script>
-    <script src="/js/featherlight.min.js?1711395039"></script>
-    <script src="/js/highlight.pack.js?1711395039"></script>
+    <script src="/js/clipboard.min.js?1733824419"></script>
+    <script src="/js/perfect-scrollbar.min.js?1733824419"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1733824419"></script>
+    <script src="/js/jquery.sticky.js?1733824419"></script>
+    <script src="/js/featherlight.min.js?1733824419"></script>
+    <script src="/js/highlight.pack.js?1733824419"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1711395039"></script>
-    <script src="/js/learn.js?1711395039"></script>
-    <script src="/js/hugo-learn.js?1711395039"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1733824419"></script>
+    <script src="/js/learn.js?1733824419"></script>
+    <script src="/js/hugo-learn.js?1733824419"></script>
 
-    <link href="/mermaid/mermaid.css?1711395039" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1711395039"></script>
+    <link href="/mermaid/mermaid.css?1733824419" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1733824419"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

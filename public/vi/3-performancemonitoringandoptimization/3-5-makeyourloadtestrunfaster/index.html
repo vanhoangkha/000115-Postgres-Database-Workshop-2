@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.122.0">
+    <meta name="generator" content="Hugo 0.133.0">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Kiểm tra khả năng chịu tải nhanh hơn :: AWS RDS POSTGRESQL CƠ BẢN</title>
 
     
-    <link href="/css/nucleus.css?1711395039" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1711395039" rel="stylesheet">
-    <link href="/css/hybrid.css?1711395039" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1711395039" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1711395039" rel="stylesheet">
-    <link href="/css/auto-complete.css?1711395039" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1711395039" rel="stylesheet">
-    <link href="/css/theme.css?1711395039" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1711395039" rel="stylesheet">
+    <link href="/css/nucleus.css?1733824419" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1733824419" rel="stylesheet">
+    <link href="/css/hybrid.css?1733824419" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1733824419" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1733824419" rel="stylesheet">
+    <link href="/css/auto-complete.css?1733824419" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1733824419" rel="stylesheet">
+    <link href="/css/theme.css?1733824419" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1733824419" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1711395039" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1733824419" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1711395039"></script>
+    <script src="/js/jquery-3.3.1.min.js?1733824419"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1711395039"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1711395039"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1733824419"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1733824419"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/vi";
+        var baseurl = "\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1711395039"></script>
+<script type="text/javascript" src="/js/search.js?1733824419"></script>
 
     
   </div>
@@ -1167,7 +1167,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>20-10-2023</font></i>
+        <i><font color=orange>10-12-2024</font></i>
     </left>
     <left>
         <br>
@@ -1271,7 +1271,7 @@
 </li>
 <li>
 <p>Trước tiên, hãy xác định số lượng giao dịch mỗi giây mà chúng ta đã thực hiện. Quay về với giao diện terminal của <strong>MobaXterm</strong> và xem số lượng giao dịch mỗi giây (<strong>tps transactions per second</strong>) khi sử dụng <strong>pgbench</strong> để kiểm tra khả năng với 200 client.
-<img src="/images/3/3-5/1.png" alt="load test faster"></p>
+<img alt="load test faster" src="/images/3/3-5/1.png"></p>
 </li>
 <li>
 <p>Trong hai dòng cuối cùng của ảnh chụp màn hình ở trên, chúng ta thấy rằng khối lượng giao dịch của chúng ta có thể thực hiện khoảng 578 giao dịch mỗi giây (tps) trên db.t3.medium instance. Nếu môi trường lab của bạn sử dụng loại phiên bản khác, chẳng hạn như db.t3.large, bạn có thể thấy một giá trị khác.</p>
@@ -1285,11 +1285,11 @@
 <li>
 <p>Hãy bắt đầu bằng cách bắt đầu ở cấp độ vi mô và xem xét khối lượng công việc của chúng ta trong Performance Insights. Chúng ta có thể nhận thấy rằng sự kiện chờ hàng đầu của chúng ta là <strong>WALWriteLock</strong> và <strong>DataFileRead</strong>. Chúng tôi đã xác định đây là sự kiện chờ đợi hàng đầu vì chúng tôi có thể thấy trực quan rằng nó chiếm nhiều diện tích nhất trong biểu đồ. Nói cách khác, nó có số phiên chờ đợi sự kiện này nhiều nhất (trung bình 100 phiên cơ sở dữ liệu đang chờ sự kiện đó ). Chúng ta cũng có thể xác định rằng Câu lệnh SQL được liên kết với <strong>WALWriteLock</strong> là <strong>END</strong>, trong PostgreSQL là câu lệnh closes/commits.</p>
 <p><em>Counter metrics</em>
-<img src="/images/3/3-4/3.png" alt="data load test"></p>
+<img alt="data load test" src="/images/3/3-4/3.png"></p>
 <p><em>Database load</em>
-<img src="/images/3/3-4/4.png" alt="data load test"></p>
+<img alt="data load test" src="/images/3/3-4/4.png"></p>
 <p><em>Top SQL</em>
-<img src="/images/3/3-4/5.png" alt="data load test"></p>
+<img alt="data load test" src="/images/3/3-4/5.png"></p>
 </li>
 <li>
 <p>Có thể bạn chưa quen với sự kiện chờ <strong>WALWriteLock</strong>. WAL là <strong>Write Ahead Log</strong>, còn được gọi là nhật ký giao dịch. Các tệp này chứa bản ghi liên tục về COMMITs và COMMITs không thể quay lại máy khách cho đến khi thông tin WAL được ghi an toàn vào đĩa.</p>
@@ -1299,14 +1299,14 @@
 </li>
 <li>
 <p>Bây giờ chúng ta hãy nhìn vào cấp độ vĩ mô. Để làm như vậy, hãy quay lại RDS console và chuyển đến <strong>Monitoring</strong> tab cho cơ sở dữ liệu của bạn. Điều này sẽ cho chúng ta thấy một số, số liệu trên toàn hệ thống. Đây là một ví dụ về những gì bạn sẽ thấy:
-<img src="/images/3/3-5/3.png" alt="load test faster"></p>
+<img alt="load test faster" src="/images/3/3-5/3.png"></p>
 </li>
 <li>
 <p>Trong biểu đồ trên, hãy lưu ý rằng <strong>CPUUtilization</strong> không cao mặc dù chúng tôi có 200 kết nối đồng thời trên 2 vCPU (db.t3.medium). Vì vậy, chúng ta có thể nói rằng có vẻ như CPU không phải là điểm nghẽn cổ chai.</p>
 </li>
 <li>
 <p>Tiếp theo hãy xem xét một số số liệu I/O. Trong biểu đồ trên, hãy lưu ý rằng các waiting I/O requests của DiskQueueDepth đã trở nên lớn hơn. Ngoài ra, hãy lưu ý rằng IOPS ghi của chúng ta gần bằng 1000. Nếu bạn nhớ từ khi tạo cơ sở dữ liệu, chúng tôi đã quyết định sử dụng bộ lưu trữ Provisioned IOPS (io1) với 1000 IOPS. Vì vậy, có vẻ như chúng tôi có thể sắp đạt đến giới hạn hiện tại của dung lượng lưu trữ được phân bổ. Để xác nhận, bạn cũng có thể xem qua các biểu đồ và tìm biểu đồ Write Latency:</p>
-<p><img src="/images/3/3-5/4.png" alt="load test faster"></p>
+<p><img alt="load test faster" src="/images/3/3-5/4.png"></p>
 </li>
 <li>
 <p>Trong biểu đồ WriteLatency, chúng ta có thể thấy rằng độ trễ ghi rất cao trong khối lượng công việc. Nó sẽ phù hợp với giả thuyết của chúng tôi rằng chúng tôi đang đạt đến giới hạn của bộ nhớ được định cấu hình (1000 IOPS), điều này khiến độ sâu hàng đợi và độ trễ ghi tăng lên, đồng thời khiến việc ghi vào WAL mất nhiều thời gian hơn. Ngày càng có nhiều phiên cơ sở dữ liệu phải chờ lâu hơn để WAL được ghi khi họ thực hiện giao dịch của mình.</p>
@@ -1316,18 +1316,18 @@
 </li>
 <li>
 <p>Hãy sửa đổi cơ sở dữ liệu của chúng ta và chỉ định 3500 IOPS (tăng từ giá trị hiện tại là 1000). Để làm như vậy, hãy nhấp vào nút <strong>Modify</strong> ở đầu màn hình. Trên màn hình sửa đổi, thay đổi trường <strong>Provisioned IOPS</strong> thành 3500.</p>
-<p><img src="/images/3/3-5/5.png" alt="load test faster"></p>
+<p><img alt="load test faster" src="/images/3/3-5/5.png"></p>
 </li>
 <li>
 <p>Sau đó kéo xuống cuối trang sửa đổi và nhấp vào <strong>Continue</strong>.</p>
 </li>
 <li>
 <p>Trên trang <strong>Summary and Scheduling</strong>, hãy nhớ chọn <strong>Apply Immediately</strong>. Sau đó nhấp vào <strong>Modify DB Instance</strong>.
-<img src="/images/3/3-5/6.png" alt="load test faster"></p>
+<img alt="load test faster" src="/images/3/3-5/6.png"></p>
 </li>
 <li>
 <p>Tại thời điểm này, bạn hãy truy cập <a href="https://console.aws.amazon.com/rds/home#databases:">Databases List</a>. Điều thú vị ở trang <strong>Databases List</strong> là bạn có thể dễ dàng làm mới trang để có thể theo dõi những thay đổi trong <strong>Status</strong>.
-<img src="/images/3/3-5/7.png" alt="load test faster"></p>
+<img alt="load test faster" src="/images/3/3-5/7.png"></p>
 </li>
 <li>
 <p>Điều bạn muốn làm là xem <strong>Status</strong> trong khi RDS thay đổi IOPS. Cơ sở dữ liệu sẽ vẫn mở trong khi điều này xảy ra. Tuy nhiên, chúng tôi muốn đợi thay đổi hoàn tất trước khi chạy lại khối lượng công việc của mình. Quá trình này sẽ mất 10-15 phút. Đầu tiên, bạn sẽ thấy trạng thái có nội dung Modifying, sau đó sẽ có nội dung <strong>Storage Optimization</strong> khi hệ thống lưu trữ phụ trợ tự tối ưu hóa để cung cấp cấu hình IOPS mới.</p>
@@ -1365,7 +1365,7 @@ pgbench --host &lt;your database endpoint&gt;--username masteruser --protocol=pr
 </code></pre></li>
 <li>
 <p>Bây giờ bạn sẽ thấy benchmark chạy nhanh hơn. Ví dụ: bây giờ bạn sẽ thấy khoảng 1300 giao dịch mỗi giây (tăng từ 578 giao dịch mỗi giây trước đó).</p>
-<p><img src="/images/3/3-5/8.png" alt="load test faster"></p>
+<p><img alt="load test faster" src="/images/3/3-5/8.png"></p>
 </li>
 <li>
 <p>Vì vậy, bằng cách tăng dung lượng <strong>IOPS</strong> của bộ lưu trữ, bạn có thể làm cho việc kiểm tra chạy nhanh hơn.
@@ -2003,19 +2003,19 @@ pgbench --host &lt;your database endpoint&gt;--username masteruser --protocol=pr
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1711395039"></script>
-    <script src="/js/perfect-scrollbar.min.js?1711395039"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1711395039"></script>
-    <script src="/js/jquery.sticky.js?1711395039"></script>
-    <script src="/js/featherlight.min.js?1711395039"></script>
-    <script src="/js/highlight.pack.js?1711395039"></script>
+    <script src="/js/clipboard.min.js?1733824419"></script>
+    <script src="/js/perfect-scrollbar.min.js?1733824419"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1733824419"></script>
+    <script src="/js/jquery.sticky.js?1733824419"></script>
+    <script src="/js/featherlight.min.js?1733824419"></script>
+    <script src="/js/highlight.pack.js?1733824419"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1711395039"></script>
-    <script src="/js/learn.js?1711395039"></script>
-    <script src="/js/hugo-learn.js?1711395039"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1733824419"></script>
+    <script src="/js/learn.js?1733824419"></script>
+    <script src="/js/hugo-learn.js?1733824419"></script>
 
-    <link href="/mermaid/mermaid.css?1711395039" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1711395039"></script>
+    <link href="/mermaid/mermaid.css?1733824419" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1733824419"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

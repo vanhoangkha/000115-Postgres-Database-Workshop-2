@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.122.0">
+    <meta name="generator" content="Hugo 0.133.0">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Thiết lập tính sẵn sàng cao cho RDS PostgreSQL (Multi-AZ) :: AWS RDS POSTGRESQL CƠ BẢN</title>
 
     
-    <link href="/css/nucleus.css?1711395039" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1711395039" rel="stylesheet">
-    <link href="/css/hybrid.css?1711395039" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1711395039" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1711395039" rel="stylesheet">
-    <link href="/css/auto-complete.css?1711395039" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1711395039" rel="stylesheet">
-    <link href="/css/theme.css?1711395039" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1711395039" rel="stylesheet">
+    <link href="/css/nucleus.css?1733824419" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1733824419" rel="stylesheet">
+    <link href="/css/hybrid.css?1733824419" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1733824419" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1733824419" rel="stylesheet">
+    <link href="/css/auto-complete.css?1733824419" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1733824419" rel="stylesheet">
+    <link href="/css/theme.css?1733824419" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1733824419" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1711395039" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1733824419" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1711395039"></script>
+    <script src="/js/jquery-3.3.1.min.js?1733824419"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1711395039"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1711395039"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1733824419"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1733824419"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/vi";
+        var baseurl = "\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1711395039"></script>
+<script type="text/javascript" src="/js/search.js?1733824419"></script>
 
     
   </div>
@@ -1167,7 +1167,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>20-10-2023</font></i>
+        <i><font color=orange>10-12-2024</font></i>
     </left>
     <left>
         <br>
@@ -1267,7 +1267,7 @@
 
 	<h4 id="xác-nhận-đã-cài-đặt-multi-az-cho-rds-postgresql">Xác nhận đã cài đặt Multi-AZ cho RDS PostgreSQL</h4>
 <p>Truy cập giao diện <a href="https://console.aws.amazon.com/rds/home#databases">Amazon RDS console</a>. Kéo sang bên phải phần cài đặt cơ sở dữ liệu dành cho cơ sở dữ liệu <strong>rdspg-fcj-labs</strong> của bạn để xem lại cấu hình Multi-AZ của nó.
-<img src="/images/7/1/1.png" alt="HA">
+<img alt="HA" src="/images/7/1/1.png">
 <em>Chúng ta có thể xác nhận rằng Multi-AZ chưa được định cấu hình, vì vậy, chúng tôi cần thiết lập cơ sở dữ liệu của mình để có tính sẵn sàng cao trong phần tiếp theo.</em></p>
 <h4 id="thiết-lập-tính-sẵn-sàng-cao-cho-rds-postgresql-multi-az">Thiết lập tính sẵn sàng cao cho RDS PostgreSQL (Multi-AZ)</h4>
 <p>Amazon RDS Multi-AZ deployments cung cấp tính sẵn sàng cao và khả năng khôi phục tự động cho cơ sở dữ liệu của bạn, giúp giảm thiểu thời gian chết của hệ thống và hạn chế mất dữ liệu trong trường hợp sự cố xảy ra. Mỗi AZ chạy trên cơ sở hạ tầng độc lập, riêng biệt về mặt vật lý và được thiết kế để có độ tin cậy cao. Khi có một sự cố xảy ra với primary instance, Amazon RDS tự động chuyển dữ liệu sang secondary instance và thay thế primary instance bằng secondary instance trong quá trình phục hồi. Việc này giúp đảm bảo rằng ứng dụng của bạn vẫn có thể tiếp tục hoạt động mà không cần thao tác thủ công để khôi phục từ một bản sao phục hồi. Trong trường hợp xảy ra lỗi cơ sở hạ tầng, Amazon RDS sẽ tự động chuyển đổi dự phòng sang bản dự phòng (hoặc sang bản sao đọc trong trường hợp Amazon Aurora), để bạn có thể tiếp tục các hoạt động của cơ sở dữ liệu ngay khi quá trình chuyển đổi dự phòng hoàn tất. Vì DB instance endpoint của bạn vẫn giữ nguyên sau khi chuyển đổi dự phòng nên ứng dụng của bạn có thể tiếp tục hoạt động cơ sở dữ liệu mà không cần can thiệp quản trị thủ công. Có thể xem thêm chi tiết <a href="https://aws.amazon.com/blogs/database/amazon-rds-under-the-hood-multi-az/">here</a>.</p>
@@ -1277,17 +1277,17 @@
 </li>
 <li>
 <p>Tại trang <strong>Modify DB Instance: rdspg-fcj-labs</strong> , kéo xuống phần <strong>Availability &amp; durability</strong> và chọn <strong>Create a standby instance</strong>.
-<img src="/images/7/1/2.png" alt="HA"></p>
+<img alt="HA" src="/images/7/1/2.png"></p>
 </li>
 <li>
 <p>Kéo xuống phía dưới và nhấp vào <strong>Continue</strong>. Trên cửa sổ tiếp theo, bạn sẽ nhận thấy thuộc tính <strong>Multi-AZ deployment</strong> được thay đổi thành <strong>Yes</strong> trong cột Value mới. Trong phần Scheduling of modifications, chọn <strong>Apply immediately</strong> và nhấp vào <strong>Modify DB Instance</strong> ở dưới cùng.
-<img src="/images/7/1/3.png" alt="HA"></p>
+<img alt="HA" src="/images/7/1/3.png"></p>
 </li>
 </ol>
 <p><em><strong>Bây giờ instance sẽ thay đổi thành trạng thái <strong>Modifying</strong> và chúng ta cần đợi cho đến khi thao tác này hoàn tất - quá trình này thường mất khoảng 5-10 phút.</strong></em></p>
 <ol start="4">
 <li>Khi trạng thái trở lại <strong>Available</strong>, hãy nhấp vào <strong>rdspg-fcj-labs</strong> instance để xem lại cài đặt của nó.
-<img src="/images/7/1/4.png" alt="HA"></li>
+<img alt="HA" src="/images/7/1/4.png"></li>
 </ol>
 <p><em><strong>Vì vậy, chúng tôi đã định cấu hình RDS PostgreSQL instance của mình để có tính sẵn sàng cao và trong phần tiếp theo, chúng tôi sẽ kiểm tra khả năng này.</strong></em></p>
 <h4 id="không-bắt-buộc-aws-cli">(Không bắt buộc) AWS CLI</h4>
@@ -1937,19 +1937,19 @@ aws rds modify-db-instance \
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1711395039"></script>
-    <script src="/js/perfect-scrollbar.min.js?1711395039"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1711395039"></script>
-    <script src="/js/jquery.sticky.js?1711395039"></script>
-    <script src="/js/featherlight.min.js?1711395039"></script>
-    <script src="/js/highlight.pack.js?1711395039"></script>
+    <script src="/js/clipboard.min.js?1733824419"></script>
+    <script src="/js/perfect-scrollbar.min.js?1733824419"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1733824419"></script>
+    <script src="/js/jquery.sticky.js?1733824419"></script>
+    <script src="/js/featherlight.min.js?1733824419"></script>
+    <script src="/js/highlight.pack.js?1733824419"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1711395039"></script>
-    <script src="/js/learn.js?1711395039"></script>
-    <script src="/js/hugo-learn.js?1711395039"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1733824419"></script>
+    <script src="/js/learn.js?1733824419"></script>
+    <script src="/js/hugo-learn.js?1733824419"></script>
 
-    <link href="/mermaid/mermaid.css?1711395039" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1711395039"></script>
+    <link href="/mermaid/mermaid.css?1733824419" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1733824419"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

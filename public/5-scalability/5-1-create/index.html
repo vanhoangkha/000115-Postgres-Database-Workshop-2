@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.122.0">
+    <meta name="generator" content="Hugo 0.133.0">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Create Read-replica to provide read scalability :: AWS RDS POSTGRESQL FOUNDATION</title>
 
     
-    <link href="/css/nucleus.css?1711395039" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1711395039" rel="stylesheet">
-    <link href="/css/hybrid.css?1711395039" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1711395039" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1711395039" rel="stylesheet">
-    <link href="/css/auto-complete.css?1711395039" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1711395039" rel="stylesheet">
-    <link href="/css/theme.css?1711395039" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1711395039" rel="stylesheet">
+    <link href="/css/nucleus.css?1733824419" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1733824419" rel="stylesheet">
+    <link href="/css/hybrid.css?1733824419" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1733824419" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1733824419" rel="stylesheet">
+    <link href="/css/auto-complete.css?1733824419" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1733824419" rel="stylesheet">
+    <link href="/css/theme.css?1733824419" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1733824419" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1711395039" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1733824419" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1711395039"></script>
+    <script src="/js/jquery-3.3.1.min.js?1733824419"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1711395039"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1711395039"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1733824419"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1733824419"></script>
 <script type="text/javascript">
     
-        var baseurl = "";
+        var baseurl = "\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1711395039"></script>
+<script type="text/javascript" src="/js/search.js?1733824419"></script>
 
     
   </div>
@@ -1167,7 +1167,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>20-10-2023</font></i>
+        <i><font color=orange>10-12-2024</font></i>
     </left>
     <left>
         <br>
@@ -1266,16 +1266,16 @@
 
 
 	<p><strong>Amazon RDS Read Replicas</strong> provide enhanced performance and durability for RDS instances. They make it easy to elastically scale out beyond the capacity constraints of a single DB instance for read-heavy database workloads. You can create from one to 5 replicas of a given source DB Instance and serve high-volume application read traffic from multiple copies of your data, thereby increasing aggregate read throughput. Read replicas can also be promoted when needed to become standalone DB instances. Find more features of RDS Read-replicas <a href="https://aws.amazon.com/rds/features/read-replicas/">here</a>.
-<img src="/images/5/rdspg.png" alt="create"></p>
+<img alt="create" src="/images/5/rdspg.png"></p>
 <p><strong>Amazon RDS creates a second DB instance</strong> using a snapshot of the source DB instance. It will uses the engines native asynchronous replication to update the read replica whenever there is a change to the source DB instance. The read replica operates as a DB instance that allows only read-only connections; applications can connect to a read replica just as they would to any DB instance.</p>
 <ol>
 <li>
 <p>Find the RDS PostgreSQL instance <strong>rdspg-fcj-labs</strong> under the <strong>Databases</strong> menu and click on the radio button in front of the DB Instance. Click on the <strong>Actions</strong> drop down on the right side and choose <strong>Create Read Replica.</strong>
-<img src="/images/5/1/1.png" alt="create"></p>
+<img alt="create" src="/images/5/1/1.png"></p>
 </li>
 <li>
 <p>For <strong>Settings</strong>, you must provide a DB Instance Identifier (i.e. the name for this instance). Something like &ldquo;rdspg-fcj-labs-read&rdquo; works.
-<img src="/images/5/1/2.png" alt="create"></p>
+<img alt="create" src="/images/5/1/2.png"></p>
 </li>
 <li>
 <p>For the <strong>Instance Configurations</strong> and <strong>AWS Region</strong> sections, leave the default values. <strong>Uncheck</strong> the <strong>Enable storage autoscaling</strong> option.
@@ -1283,7 +1283,7 @@
 <div class="notices note" ><p>Notice that you can optionally size the Read Replica use a different instance tier than your primary instance. In your case, the Destination Region will likely be different than what you see in the screenshot and that is OK.</p>
 </div>
 
-<img src="/images/5/1/3.png" alt="create"></p>
+<img alt="create" src="/images/5/1/3.png"></p>
 </li>
 <li>
 <p>For <strong>Connectivity</strong>, leave the defaults.
@@ -1294,31 +1294,31 @@
 </li>
 <li>
 <p>For <strong>Availability</strong>, select Multi-AZ DB instance.
-<img src="/images/5/1/4.png" alt="create"></p>
+<img alt="create" src="/images/5/1/4.png"></p>
 </li>
 <li>
 <p>For simplicity, we’ll leave the rest at their defaults. Scroll to the bottom and click <strong>Create read replica</strong>.
-<img src="/images/5/1/7.png" alt="create"></p>
+<img alt="create" src="/images/5/1/7.png"></p>
 </li>
 </ol>
 <p><em>It will take about 10 minutes for your read replica to be created. Your primary database continues to be available as this happens.</em></p>
 <ol start="7">
 <li>
 <p>Once the Read Replica status is <strong>Available</strong> on the <strong>Databases</strong> page (you may need to use the refresh icon to see the latest <strong>Status</strong>), click on the new read replica instance.
-<img src="/images/5/1/8.png" alt="create"></p>
+<img alt="create" src="/images/5/1/8.png"></p>
 </li>
 <li>
 <p>On the detail page for the read replica, first notice the endpoint. The read replica has a different endpoint than your primary instance
-<img src="/images/5/1/9.png" alt="create"></p>
+<img alt="create" src="/images/5/1/9.png"></p>
 </li>
 <li>
 <p>Next, scroll down to view the replication details. You can see that our primary instance is <strong>replicating</strong> to our read replica instance.
-<img src="/images/5/1/10.png" alt="create">
+<img alt="create" src="/images/5/1/10.png">
 You can then connect to the read replica using its endpoint and the same username and password as the source instance. For example, connect and execute the following query to check the replication lag between the source and the replica:</p>
 </li>
 </ol>
 <pre tabindex="0"><code>SELECT extract(epoch from now() - pg_last_xact_replay_timestamp()) AS replica_lag;
-</code></pre><p><img src="/images/5/1/11.png" alt="create"></p>
+</code></pre><p><img alt="create" src="/images/5/1/11.png"></p>
 <p>RDS PostgreSQL also allows you to promote a read replica to be a standalone instance. We will do that in the next Lab.</p>
 <p><strong>Congratulations</strong>: In this lab, you added a read replica instance to your configuration to provide additional read scalability to your application.</p>
 <h4 id="optional-aws-cli">(OPTIONAL) AWS CLI</h4>
@@ -1967,19 +1967,19 @@ aws rds create-db-instance-read-replica \
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1711395039"></script>
-    <script src="/js/perfect-scrollbar.min.js?1711395039"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1711395039"></script>
-    <script src="/js/jquery.sticky.js?1711395039"></script>
-    <script src="/js/featherlight.min.js?1711395039"></script>
-    <script src="/js/highlight.pack.js?1711395039"></script>
+    <script src="/js/clipboard.min.js?1733824419"></script>
+    <script src="/js/perfect-scrollbar.min.js?1733824419"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1733824419"></script>
+    <script src="/js/jquery.sticky.js?1733824419"></script>
+    <script src="/js/featherlight.min.js?1733824419"></script>
+    <script src="/js/highlight.pack.js?1733824419"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1711395039"></script>
-    <script src="/js/learn.js?1711395039"></script>
-    <script src="/js/hugo-learn.js?1711395039"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1733824419"></script>
+    <script src="/js/learn.js?1733824419"></script>
+    <script src="/js/hugo-learn.js?1733824419"></script>
 
-    <link href="/mermaid/mermaid.css?1711395039" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1711395039"></script>
+    <link href="/mermaid/mermaid.css?1733824419" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1733824419"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

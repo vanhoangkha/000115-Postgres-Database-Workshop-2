@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.122.0">
+    <meta name="generator" content="Hugo 0.133.0">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Make your Load Test run faster :: AWS RDS POSTGRESQL FOUNDATION</title>
 
     
-    <link href="/css/nucleus.css?1711395039" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1711395039" rel="stylesheet">
-    <link href="/css/hybrid.css?1711395039" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1711395039" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1711395039" rel="stylesheet">
-    <link href="/css/auto-complete.css?1711395039" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1711395039" rel="stylesheet">
-    <link href="/css/theme.css?1711395039" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1711395039" rel="stylesheet">
+    <link href="/css/nucleus.css?1733824419" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1733824419" rel="stylesheet">
+    <link href="/css/hybrid.css?1733824419" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1733824419" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1733824419" rel="stylesheet">
+    <link href="/css/auto-complete.css?1733824419" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1733824419" rel="stylesheet">
+    <link href="/css/theme.css?1733824419" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1733824419" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1711395039" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1733824419" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1711395039"></script>
+    <script src="/js/jquery-3.3.1.min.js?1733824419"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1711395039"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1711395039"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1733824419"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1733824419"></script>
 <script type="text/javascript">
     
-        var baseurl = "";
+        var baseurl = "\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1711395039"></script>
+<script type="text/javascript" src="/js/search.js?1733824419"></script>
 
     
   </div>
@@ -1167,7 +1167,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>20-10-2023</font></i>
+        <i><font color=orange>10-12-2024</font></i>
     </left>
     <left>
         <br>
@@ -1271,7 +1271,7 @@
 </li>
 <li>
 <p>First, let’s identify our current baseline showing the number of transactions per second our <strong>pgbench</strong> workload performed. Go to your <strong>MobaXterm</strong> window and look at how many tps (<strong>transactions per second</strong>) it reported for the 200 user pgbench load test you ran in the last module.
-<img src="/images/3/3-5/1.png" alt="load test faster"></p>
+<img alt="load test faster" src="/images/3/3-5/1.png"></p>
 </li>
 <li>
 <p>In the last two lines of the screenshot above, we see that our transactional workload was able to do approximately 578 transactions per second (tps). This is our baseline. The 578 tps was done on an db.t3.medium instance. If your lab environment uses a different instance type, such as the db.t3.medium, you may see a different value.</p>
@@ -1285,11 +1285,11 @@
 <li>
 <p>Let&rsquo;s begin by starting with the micro level and looking at our workload in Performance Insights. If we zoom into the time period of the workload (you can select a custom time period by dragging across a range of times in the Database Load chart), we can notice that our top wait event is <strong>WALWriteLock</strong> and <strong>DataFileRead</strong>. We identified this as our top wait event because we can visually see that it occupies the most area in our chart—in other words, it has the most number of sessions waiting on this event (an average of 100 database sessions are waiting on that event). We can also identify that the SQL Statement that is associated with the <strong>WALWriteLock</strong> is <strong>END</strong>, which in PostgreSQL is the statement that closes/commits the transaction.</p>
 <p><em>Counter metrics</em>
-<img src="/images/3/3-4/3.png" alt="data load test"></p>
+<img alt="data load test" src="/images/3/3-4/3.png"></p>
 <p><em>Database load</em>
-<img src="/images/3/3-4/4.png" alt="data load test"></p>
+<img alt="data load test" src="/images/3/3-4/4.png"></p>
 <p><em>Top SQL</em>
-<img src="/images/3/3-4/5.png" alt="data load test"></p>
+<img alt="data load test" src="/images/3/3-4/5.png"></p>
 </li>
 <li>
 <p>You may not be familiar with the <strong>WALWriteLock</strong> wait event. The WAL is the <strong>Write Ahead Log</strong>, also known as the transaction journal. These files contain a persistent record of COMMITs and COMMITs can not return to the client until the WAL information is safely written to disk.</p>
@@ -1299,14 +1299,14 @@
 </li>
 <li>
 <p>Let&rsquo;s now look at the macro level. To do so, navigate to the RDS Console and go to the Monitoring tab for your database. This will show us some system-wide metrics. Here is an example of what you will see:
-<img src="/images/3/3-5/3.png" alt="load test faster"></p>
+<img alt="load test faster" src="/images/3/3-5/3.png"></p>
 </li>
 <li>
 <p>In the above chart, notice that <strong>CPUUtilization</strong> is not high even though we have 200 simultaneous connections on a 2 vCPU shape (db.t3.medium). So, we can say that it does not appear that CPU is a bottleneck.</p>
 </li>
 <li>
 <p>Next look at some of the I/O metrics. In the chart above, notice that our DiskQueueDepth of waiting I/O requests has gotten large. Also, notice that our Write IOPS is close to 1000. If you remember from when we created the database, we decided to use Provisioned IOPS (io1) storage with 1000 IOPS <em>(if you forgot, you can see the current specification for your storage under the Configuration tab. Look for the Storage Type and IOPS fields)</em>. So, it is looking like we might be hitting the current limits of our allocated storage. As a final confirmation, you can also page through the charts and find the Write Latency chart:</p>
-<p><img src="/images/3/3-5/4.png" alt="load test faster"></p>
+<p><img alt="load test faster" src="/images/3/3-5/4.png"></p>
 </li>
 <li>
 <p>In the WriteLatency chart, we can see that the write latencies got very high during our workload. This kind of behavior would be inline with our hypothesis that we are hitting the limits of our configured storage (1000 IOPS), which causes the queue depth and write latencies to increase, and which causes writes to the WAL to take longer, and which causes more and more database sessions to have to wait longer and longer for the WAL to be written when they commit their transaction.</p>
@@ -1316,18 +1316,18 @@
 </li>
 <li>
 <p>Let’s modify our database and specify 3500 IOPS (up from its current value of 1000). To do so, click the <strong>Modify</strong> button at the top of the screen. On the modification screen, change the <strong>Provisioned IOPS</strong> field to 3500.</p>
-<p><img src="/images/3/3-5/5.png" alt="load test faster"></p>
+<p><img alt="load test faster" src="/images/3/3-5/5.png"></p>
 </li>
 <li>
 <p>Then scroll down to the bottom of the modification page and click Continue.</p>
 </li>
 <li>
 <p>On the <strong>Summary and Scheduling</strong> page, be sure to choose <strong>Apply Immediately</strong>. Then click <strong>Modify DB Instance</strong>.</p>
-<p><img src="/images/3/3-5/6.png" alt="load test faster"></p>
+<p><img alt="load test faster" src="/images/3/3-5/6.png"></p>
 </li>
 <li>
 <p>At this point, I suggest you go to the <a href="https://console.aws.amazon.com/rds/home#databases:">Databases List</a> . The nice thing about the <strong>Databases List</strong> page is that it is easy to refresh the page so that you can track the changes in the <strong>Status</strong>.
-<img src="/images/3/3-5/7.png" alt="load test faster"></p>
+<img alt="load test faster" src="/images/3/3-5/7.png"></p>
 </li>
 <li>
 <p>What you want to do is watch the <strong>Status</strong> while RDS changes the IOPS. The database will remain open while this happens. But we want to wait for the change to complete before we run our workload again. The process will take 10-15 minutes. You will see the status first say Modifying and then it will say <strong>Storage Optimization</strong> as the backend storage system optimizes itself to deliver on the new IOPS configuration.</p>
@@ -1362,7 +1362,7 @@ pgbench --host &lt;your database endpoint&gt;--username masteruser --protocol=pr
 </code></pre></li>
 <li>
 <p>You should now see that the benchmark runs faster. For example, you should now see approximately 1300 transactions per second (up from 578 transactions per second before).</p>
-<p><img src="/images/3/3-5/8.png" alt="load test faster"></p>
+<p><img alt="load test faster" src="/images/3/3-5/8.png"></p>
 </li>
 <li>
 <p>So, by increasing the <strong>IOPS</strong> capacity of the storage, you were able to make this stress test transactional workload run faster.
@@ -2000,19 +2000,19 @@ pgbench --host &lt;your database endpoint&gt;--username masteruser --protocol=pr
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1711395039"></script>
-    <script src="/js/perfect-scrollbar.min.js?1711395039"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1711395039"></script>
-    <script src="/js/jquery.sticky.js?1711395039"></script>
-    <script src="/js/featherlight.min.js?1711395039"></script>
-    <script src="/js/highlight.pack.js?1711395039"></script>
+    <script src="/js/clipboard.min.js?1733824419"></script>
+    <script src="/js/perfect-scrollbar.min.js?1733824419"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1733824419"></script>
+    <script src="/js/jquery.sticky.js?1733824419"></script>
+    <script src="/js/featherlight.min.js?1733824419"></script>
+    <script src="/js/highlight.pack.js?1733824419"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1711395039"></script>
-    <script src="/js/learn.js?1711395039"></script>
-    <script src="/js/hugo-learn.js?1711395039"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1733824419"></script>
+    <script src="/js/learn.js?1733824419"></script>
+    <script src="/js/hugo-learn.js?1733824419"></script>
 
-    <link href="/mermaid/mermaid.css?1711395039" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1711395039"></script>
+    <link href="/mermaid/mermaid.css?1733824419" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1733824419"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

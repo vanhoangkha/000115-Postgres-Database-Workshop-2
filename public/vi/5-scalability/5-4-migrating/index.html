@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.122.0">
+    <meta name="generator" content="Hugo 0.133.0">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Di chuyển sang DB Multi-AZ cluster bằng read replica :: AWS RDS POSTGRESQL CƠ BẢN</title>
 
     
-    <link href="/css/nucleus.css?1711395039" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1711395039" rel="stylesheet">
-    <link href="/css/hybrid.css?1711395039" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1711395039" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1711395039" rel="stylesheet">
-    <link href="/css/auto-complete.css?1711395039" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1711395039" rel="stylesheet">
-    <link href="/css/theme.css?1711395039" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1711395039" rel="stylesheet">
+    <link href="/css/nucleus.css?1733824419" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1733824419" rel="stylesheet">
+    <link href="/css/hybrid.css?1733824419" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1733824419" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1733824419" rel="stylesheet">
+    <link href="/css/auto-complete.css?1733824419" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1733824419" rel="stylesheet">
+    <link href="/css/theme.css?1733824419" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1733824419" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1711395039" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1733824419" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1711395039"></script>
+    <script src="/js/jquery-3.3.1.min.js?1733824419"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1711395039"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1711395039"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1733824419"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1733824419"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/vi";
+        var baseurl = "\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1711395039"></script>
+<script type="text/javascript" src="/js/search.js?1733824419"></script>
 
     
   </div>
@@ -1167,7 +1167,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>20-10-2023</font></i>
+        <i><font color=orange>10-12-2024</font></i>
     </left>
     <left>
         <br>
@@ -1271,44 +1271,44 @@
 <ol>
 <li>
 <p>Tìm RDS PostgreSQL instance <em><strong>rdspg-fcj-labs</strong></em> trong <strong>Databases</strong> và nhấp vào nút phía trước DB Instance. Nhấp vào menu <strong>Actions</strong> ở bên phải và chọn <strong>Create Read Replica</strong>
-<img src="/images/5/3/1.png" alt="migrating"></p>
+<img alt="migrating" src="/images/5/3/1.png"></p>
 </li>
 <li>
 <p>Tại mục <strong>Settings</strong>, bạn phải cung cấp DB Instance Identifier (i.e. the name for this instance).
-<img src="/images/5/3/2.png" alt="migrating"></p>
+<img alt="migrating" src="/images/5/3/2.png"></p>
 </li>
 <li>
 <p>Tại mục <strong>Availability</strong>, chọn <em><strong>Multi-AZ DB Cluster</strong></em> - tùy chọn triển khai mới.
-<img src="/images/5/3/4.png" alt="migrating"></p>
+<img alt="migrating" src="/images/5/3/4.png"></p>
 </li>
 <li>
 <p>Để đơn giản, chúng ta sẽ để phần còn lại ở chế độ mặc định. Kéo xuống phía dưới và nhấp vào <strong>Create read replica</strong></p>
 </li>
 </ol>
 <p>Sau khi nhấp vào <strong>Create read replica</strong>, bạn sẽ được đưa trở lại trang <strong>Databases</strong>. Làm mới trang và bạn sẽ thấy read replica đang được tạo.
-<img src="/images/5/3/5.png" alt="migrating"></p>
+<img alt="migrating" src="/images/5/3/5.png"></p>
 <p><em>Sẽ mất khoảng 10 phút để tạo read replica của bạn. Primary database của bạn tiếp tục có <strong>available</strong> khi điều này xảy ra.</em></p>
 <ol start="5">
 <li>Khi trạng thái của Read Replica là <strong>Available</strong> trên trang <strong>Databases</strong>, hãy nhấp vào Read Replica mới.</li>
 </ol>
-<p><img src="/images/5/3/6.png" alt="migrating"></p>
+<p><img alt="migrating" src="/images/5/3/6.png"></p>
 <ol start="6">
 <li>
 <p>Trên trang chi tiết về Multi-AZ DB replica cluster, trước tiên hãy chú ý đến các <strong>endpoint</strong>. Bản sao có các endpoint khác với primary instance của bạn.
-<img src="/images/5/3/7.png" alt="migrating"></p>
+<img alt="migrating" src="/images/5/3/7.png"></p>
 </li>
 <li>
 <p>Tiếp theo, kéo xuống để xem chi tiết bản sao. Bạn có thể thấy rằng primary instance của chúng ta đang sao chép sang read replica instance của chúng ta.
-<img src="/images/5/3/8.png" alt="migrating"></p>
+<img alt="migrating" src="/images/5/3/8.png"></p>
 </li>
 </ol>
 <p>Sau đó, bạn có thể kết nối với read replica bằng endpoint của nó cũng như tên người dùng và mật khẩu giống như primary instance. Ví dụ: kết nối và thực hiện truy vấn sau để kiểm tra độ trễ sao chép giữa nguồn và bản sao:</p>
 <pre tabindex="0"><code>SELECT extract(epoch from now() - pg_last_xact_replay_timestamp()) AS replica_lag;
-</code></pre><p><img src="/images/5/3/9.png" alt="migrating"></p>
+</code></pre><p><img alt="migrating" src="/images/5/3/9.png"></p>
 <p><em><strong>Bạn cũng có thể nâng cấp Multi-AZ read replica cluster này thành một cụm độc lập. Chúng tôi sẽ làm điều đó trong bước tiếp theo.</strong></em></p>
 <ol start="8">
 <li>Click vào <strong>Actions</strong>, và chọn <strong>Promote</strong> để tách ra và chuyển đối <em><strong>rdspg-fcj-labs-read-test</strong></em> Multi-AZ DB Cluster bằng cách chọn <strong>Promote read replica</strong>
-<img src="/images/5/3/10.png" alt="migrating"></li>
+<img alt="migrating" src="/images/5/3/10.png"></li>
 </ol>
 <p>Sẽ mất khoảng 1-2 phút để read replica của bạn được tách ra và được chuyển đổi dưới dạng RDS DB Cluster với tùy chọn Multi-AZ DB Cluster deployment.</p>
 <p>Tại thời điểm này, bạn đã di chuyển thành công RDS PostgreSQL instance có chế độ Multi-AZ DB Instance deployment sang tùy chọn RDS PostgreSQL Multi-AZ DB Cluster deployment.</p>
@@ -1967,19 +1967,19 @@ aws rds promote-read-replica-db-cluster \
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1711395039"></script>
-    <script src="/js/perfect-scrollbar.min.js?1711395039"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1711395039"></script>
-    <script src="/js/jquery.sticky.js?1711395039"></script>
-    <script src="/js/featherlight.min.js?1711395039"></script>
-    <script src="/js/highlight.pack.js?1711395039"></script>
+    <script src="/js/clipboard.min.js?1733824419"></script>
+    <script src="/js/perfect-scrollbar.min.js?1733824419"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1733824419"></script>
+    <script src="/js/jquery.sticky.js?1733824419"></script>
+    <script src="/js/featherlight.min.js?1733824419"></script>
+    <script src="/js/highlight.pack.js?1733824419"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1711395039"></script>
-    <script src="/js/learn.js?1711395039"></script>
-    <script src="/js/hugo-learn.js?1711395039"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1733824419"></script>
+    <script src="/js/learn.js?1733824419"></script>
+    <script src="/js/hugo-learn.js?1733824419"></script>
 
-    <link href="/mermaid/mermaid.css?1711395039" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1711395039"></script>
+    <link href="/mermaid/mermaid.css?1733824419" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1733824419"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

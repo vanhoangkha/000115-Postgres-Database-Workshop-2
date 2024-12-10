@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.122.0">
+    <meta name="generator" content="Hugo 0.133.0">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Point in Time Restore :: AWS RDS POSTGRESQL CƠ BẢN</title>
 
     
-    <link href="/css/nucleus.css?1711395039" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1711395039" rel="stylesheet">
-    <link href="/css/hybrid.css?1711395039" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1711395039" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1711395039" rel="stylesheet">
-    <link href="/css/auto-complete.css?1711395039" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1711395039" rel="stylesheet">
-    <link href="/css/theme.css?1711395039" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1711395039" rel="stylesheet">
+    <link href="/css/nucleus.css?1733824419" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1733824419" rel="stylesheet">
+    <link href="/css/hybrid.css?1733824419" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1733824419" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1733824419" rel="stylesheet">
+    <link href="/css/auto-complete.css?1733824419" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1733824419" rel="stylesheet">
+    <link href="/css/theme.css?1733824419" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1733824419" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1711395039" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1733824419" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1711395039"></script>
+    <script src="/js/jquery-3.3.1.min.js?1733824419"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1711395039"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1711395039"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1733824419"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1733824419"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/vi";
+        var baseurl = "\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1711395039"></script>
+<script type="text/javascript" src="/js/search.js?1733824419"></script>
 
     
   </div>
@@ -1167,7 +1167,7 @@
     <br>
     <br>
         <b> Last Updated </b> <br>
-        <i><font color=orange>20-10-2023</font></i>
+        <i><font color=orange>10-12-2024</font></i>
     </left>
     <left>
         <br>
@@ -1288,7 +1288,7 @@
 <li>
 <p>Output mẫu bên dưới hiển thị thời gian khôi phục mới nhất là ngày 6 tháng 10 năm 2023 lúc 14:04 UTC</p>
 <pre tabindex="0"><code>2023-10-6T12:04:19Z
-</code></pre><p><img src="/images/4/4-5/1.png" alt="pitr"></p>
+</code></pre><p><img alt="pitr" src="/images/4/4-5/1.png"></p>
 </li>
 <li>
 <p>Bằng cách sử dụng <strong>AWS-CLI</strong>, chúng ta có thể sử dụng lệnh sau để khôi phục cơ sở dữ liệu về thời điểm có thể khôi phục mới nhất mà chúng ta đã tra cứu ở bước trước. Hãy chắc chắn để cập nhật thời gian.</p>
@@ -1427,20 +1427,20 @@
 </li>
 <li>
 <p>Bây giờ, hãy quay lại RDS Console để kiểm tra cơ sở dữ liệu đang khôi phục. Nếu bạn xem chi tiết, hãy lưu ý rằng tất cả các thông số cơ sở dữ liệu (ví dụ: DB Instance Class, Security Group) đều khớp với cơ sở dữ liệu gốc.
-<img src="/images/4/4-5/2.png" alt="pitr"></p>
+<img alt="pitr" src="/images/4/4-5/2.png"></p>
 </li>
 <li>
 <p>Bây giờ, chúng ta sẽ sử dụng <a href="https://console.aws.amazon.com/rds/home#databases:">RDS Console</a> để khôi phục cơ sở dữ liệu của chúng ta về 30 phút trước đó. Chọn cơ sở dữ liệu <code>rdspg-fcj-labs</code>, chọn <strong>Actions</strong> và chọn <strong>Restore to point in time.</strong>
-<img src="/images/4/4-5/3.png" alt="pitr"></p>
+<img alt="pitr" src="/images/4/4-5/3.png"></p>
 </li>
 <li>
 <p>Trên trang <strong>Launch DB Instance</strong>, chọn một tùy chỉnh và chọn thời gian trước 30 phút. Nhập một DB instance identifier mới (ví dụ: <code>rdspg-fcj-labs-earlier-restore</code>), để thông tin còn lại ở giá trị mặc định và nhấp vào <strong>Restore to point in time</strong>.
-<img src="/images/4/4-5/4.png" alt="pitr">
-<img src="/images/4/4-5/5.png" alt="pitr"></p>
+<img alt="pitr" src="/images/4/4-5/4.png">
+<img alt="pitr" src="/images/4/4-5/5.png"></p>
 </li>
 <li>
 <p>Khi quá trình khôi phục bắt đầu, bạn sẽ được đưa trở lại danh sách cơ sở dữ liệu và sẽ thấy phiên bản mới của mình được tạo.
-<img src="/images/4/4-5/6.png" alt="pitr"></p>
+<img alt="pitr" src="/images/4/4-5/6.png"></p>
 </li>
 </ol>
 
@@ -2067,19 +2067,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1711395039"></script>
-    <script src="/js/perfect-scrollbar.min.js?1711395039"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1711395039"></script>
-    <script src="/js/jquery.sticky.js?1711395039"></script>
-    <script src="/js/featherlight.min.js?1711395039"></script>
-    <script src="/js/highlight.pack.js?1711395039"></script>
+    <script src="/js/clipboard.min.js?1733824420"></script>
+    <script src="/js/perfect-scrollbar.min.js?1733824420"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1733824420"></script>
+    <script src="/js/jquery.sticky.js?1733824420"></script>
+    <script src="/js/featherlight.min.js?1733824420"></script>
+    <script src="/js/highlight.pack.js?1733824420"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1711395039"></script>
-    <script src="/js/learn.js?1711395039"></script>
-    <script src="/js/hugo-learn.js?1711395039"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1733824420"></script>
+    <script src="/js/learn.js?1733824420"></script>
+    <script src="/js/hugo-learn.js?1733824420"></script>
 
-    <link href="/mermaid/mermaid.css?1711395039" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1711395039"></script>
+    <link href="/mermaid/mermaid.css?1733824420" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1733824420"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
