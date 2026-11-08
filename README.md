@@ -1,4 +1,4 @@
-# 🐘 PostgreSQL Workshop 2
+# PostgreSQL Workshop 2
 
 Advanced PostgreSQL operations and optimization on AWS.
 
@@ -8,7 +8,7 @@ This is a hands-on workshop from the **AWS First Cloud Journey** series.
 
 ## Workshop
 
-📖 **[Start the workshop](https://vanhoangkha.github.io/000115-Postgres-Database-Workshop-2/)**
+**[Start the workshop](https://vanhoangkha.github.io/000115-Postgres-Database-Workshop-2/)**
 
 ## Prerequisites
 
